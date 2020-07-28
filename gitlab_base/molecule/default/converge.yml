@@ -7,6 +7,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include gitlab-base-role"
+    - name: Include gitlab-base-role
       include_role:
-        name: "gitlab-base-role"
+        name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"

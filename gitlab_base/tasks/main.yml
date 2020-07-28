@@ -4,4 +4,72 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-# tasks file for gitlab-base-role
+- name: Set OS distribution dependent variables
+  include_vars: "{{ ansible_facts['distribution'] }}.yml"
+
+- name: Install GitLab Dependencies
+  become: yes
+  package:
+    name: "{{ gitlab_dependencies }}"
+    state: present
+
+- when: ansible_os_family == 'Debian'
+  block:
+    - name: Install APT GPG key
+      apt_key:
+        url: "{{ gitlab_gpg_key_url }}"
+        state: present
+
+    - name: Add GitLab APT repository
+      apt_repository:
+        repo: "deb {{ gitlab_repo_url }} {{ ansible_distribution_release }} main"
+        state: present
+        filename: "gitlab_{{ gitlab_edition }}"
+
+    - name: Add GitLab source APT repository
+      apt_repository:
+        repo: "deb-src {{ gitlab_repo_url }} {{ ansible_distribution_release }} main"
+        state: present
+        filename: "gitlab_{{ gitlab_edition }}"
+
+- when: ansible_os_family == 'RedHat'
+  block:
+    - name: Add GitLab yum repository
+      yum_repository:
+        name: "gitlab_{{ gitlab_edition }}"
+        description: "GitLab yum repo"
+        baseurl: "{{ gitlab_repo_url }}"
+        state: present
+        repo_gpgcheck: yes
+        gpgcheck: yes
+        enabled: yes
+        gpgkey:
+          - "{{ gitlab_gpg_key_url }}"
+          - "{{ gitlab_gpg_key_url }}/gitlab-{{ gitlab_edition }}-3D645A26AB9FBD22.pub.gpg"
+        sslverify: yes
+        sslcacert: /etc/pki/tls/certs/ca-bundle.crt
+        metadata_expire: '300'
+
+    - name: Add GitLab source yum repository
+      yum_repository:
+        name: "gitlab_{{ gitlab_edition }}-source"
+        description: "GitLab source yum repo"
+        baseurl: "{{ gitlab_source_repo_url }}"
+        state: present
+        repo_gpgcheck: yes
+        gpgcheck: yes
+        enabled: yes
+        gpgkey:
+          - "{{ gitlab_gpg_key_url }}"
+          - "{{ gitlab_gpg_key_url }}/gitlab-{{ gitlab_edition }}-3D645A26AB9FBD22.pub.gpg"
+        sslverify: yes
+        sslcacert: /etc/pki/tls/certs/ca-bundle.crt
+        metadata_expire: '300'
+
+- name: Install GitLab.
+  become: yes
+  package:
+    name: "{{ gitlab_package_name }}"
+    state: present
+
+...

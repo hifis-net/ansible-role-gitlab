@@ -11,28 +11,64 @@ This Ansible Role provides a basic setup for services based on GitLab Omnibus.
 
 ## Requirements
 
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None.
 
 ## Role Variables
 
+```yaml
+gitlab_edition: "gitlab-ee"
+```
+The GitLab edition to install. Please use either `gitlab-ce` for Community
+Edition or `gitlab-ee` for Enterprise Edition.
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```yaml
+gitlab_version: "13.2.1"
+gitlab_release: "ce.0.el8"
+```
+Set a specific GitLab version to install. Please ensure that you also specify
+the desired release. You can find the available releases
+[here](https://packages.gitlab.com/gitlab).
+
+```yaml
+gitlab_gpg_key_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/gpgkey"
+```
+URL to the GPG key that was used to sign the packages.
+
+```yaml
+gitlab_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/ubuntu/"
+```
+URL to the package repository based on the operating system.
+
+```yaml
+gitlab_source_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/el/{{ ansible_distribution_major_version }}/SRPMS"
+```
+URL to the source package repository (*CentOS* only).
+
+```yaml
+gitlab_package_name: "{{ gitlab_edition + '=' + gitlab_version + '-' + gitlab_release if gitlab_version and gitlab_release else gitlab_edition }}"
+```
+Name of the GitLab package to install.
+
+```yaml
+gitlab_dependencies:
+  - apt-transport-https
+  - curl
+  - gnupg
+  - openssh-server
+  - openssl
+```
+List of depend packages required by GitLab based on the operating system.
 
 ## Dependencies
 
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None.
 
 ## Example Playbook
-
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
+```yaml
+- hosts: servers
+  roles:
+     - { role: username.rolename, x: 42 }
+```
 ## License
 
 [Apache-2.0](LICENSES/Apache-2.0.txt)

@@ -21,5 +21,14 @@ lint: |
   ansible-lint -v --force-color
 provisioner:
   name: ansible
+  playbooks:
+    prepare: prepare.yml
+    converge: converge.yml
+#  inventory:
+#    host_vars:
+#      instance:
+#        gitlab_edition: "gitlab-ce"
+#        gitlab_version: "13.2.1"
+#        gitlab_release: "ce.0.el8"
 verifier:
   name: ansible
