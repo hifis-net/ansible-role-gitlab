@@ -15,7 +15,6 @@
           dnf:
             name:
               - sudo
-#              - epel-release
             state: present
             update_cache: yes
 
