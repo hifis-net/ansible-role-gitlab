@@ -9,6 +9,10 @@ SPDX-License-Identifier: Apache-2.0
 
 This Ansible Role provides a basic setup for services based on GitLab Omnibus.
 
+Currently [supported platforms](meta/main.yml) are:
+- CentOS 8
+- Ubuntu 20.04 LTS (Focal Fossa)
+
 ## Requirements
 
 None.
