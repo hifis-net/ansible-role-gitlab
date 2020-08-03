@@ -34,12 +34,12 @@ validate:
 
 test-ubuntu20.04:
   variables:
-    MOLECUEL_DISTRO: ubuntu:20.04
+    MOLECULE_DISTRO: ubuntu:20.04
   extends: .moleculetest
 
 test-centos8:
   variables:
-    MOLECUEL_DISTRO: centos:8
+    MOLECULE_DISTRO: centos:8
   extends: .moleculetest
 
 .moleculetest:
