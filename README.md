@@ -25,7 +25,7 @@ Dependencies
 
 This GitLab Role depends on 
 [GitLab Base Role](https://gitlab.com/hifis/ansible/gitlab-base-role.git) 
-which installs the GitLab Omnibus packages.
+which installs the GitLab Omnibus package.
 
 Example Playbook
 ----------------

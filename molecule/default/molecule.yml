@@ -26,6 +26,11 @@ provisioner:
   playbooks:
     prepare: prepare.yml
     converge: converge.yml
+    verify: verify.yml
+  inventory:
+    host_vars:
+      instance_gitlab:
+        gitlab_edition: "gitlab-ee"
 verifier:
   name: ansible
 

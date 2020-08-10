@@ -3,9 +3,9 @@
 
 .. SPDX-License-Identifier: Apache-2.0
 
-*******
+********************************
 Docker driver installation guide
-*******
+********************************
 
 Requirements
 ============
