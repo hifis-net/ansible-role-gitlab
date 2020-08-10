@@ -23,6 +23,7 @@ galaxy_info:
 
   galaxy_tags: []
 
-dependencies: []
+dependencies:
+  - role: gitlab-base-role
 
 ...

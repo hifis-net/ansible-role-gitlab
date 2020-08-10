@@ -6,6 +6,8 @@
 ---
 dependency:
   name: galaxy
+  options:
+    role-file: requirements.yml
 driver:
   name: docker
 platforms:
@@ -18,9 +20,12 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
 lint: |
   yamllint --strict --format colored .
-  ansible-lint -v --force-color
+  ansible-lint -v --force-color .
 provisioner:
   name: ansible
+  playbooks:
+    prepare: prepare.yml
+    converge: converge.yml
 verifier:
   name: ansible
 
