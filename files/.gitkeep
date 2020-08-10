@@ -2,13 +2,3 @@
 # SPDX-FileCopyrightText: 2020 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
 #
 # SPDX-License-Identifier: Apache-2.0
-
----
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include gitlab-role"
-      include_role:
-        name: "gitlab-role"
-
-...
