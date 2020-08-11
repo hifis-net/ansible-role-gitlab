@@ -9,8 +9,13 @@
 - name: Verify
   hosts: all
   tasks:
-  - name: Example assertion
-    assert:
-      that: true
+    - name: Gather package facts
+      package_facts:
+        manager: auto
+
+    - name: Assert that GitLab Omnibus package is installed
+      assert:
+        that:
+          - "'{{ gitlab_edition }}' in ansible_facts.packages"
 
 ...
