@@ -4,6 +4,63 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-# defaults file for gitlab-role
+
+# GitLab dependencies to install
+gitlab_dependencies_only:
+  - "tzdata"
+# Name ot the GitLab configuration template
+gitlab_configuration_file_template: "gitlab.rb.j2"
+# Path to the GitLab configuration file
+gitlab_configuration_file_path: '/etc/gitlab/gitlab.rb'
+
+# URL of thr GitLab application
+gitlab_external_url: "http://localhost"
+# GitLab Theme to use
+gitlab_default_theme: "2"
+# Time Zone to set
+gitlab_time_zone: "Europe/Berlin"
+# Keep backups for a week
+gitlab_backup_keep_time: "604800"
+# Backup directory
+gitlab_backup_path: "/var/opt/gitlab/backups"
+# Port for web-requests
+nginx_listen_port: "80"
+# Whether to use https
+nginx_listen_https: "false"
+# Whether to redirect to https
+nginx_redirect_http_to_https: "false"
+
+# Whether to use GitLab Omnibus internal Redis
+use_internal_redis: "true"
+# Password for authentication
+redis_password: 'changeme'
+# Name of the Redis cluster
+redis_cluster_name: 'redis-cluster'
+# List of IP addresses of Redis instances
+redis_ips: []
+# GitLap IP address range
+gitlab_ip_range: "{{ ansible_default_ipv4.address }}/24"
+
+# Whether to use GitLab Omnibus internal Gitaly
+use_internal_gitaly: "true"
+# Data directory to use
+gitlab_git_data_dir: "/var/opt/gitlab/git-data"
+# Gitaly token
+gitlab_gitaly_token: 'changeme'
+# GitLab Shell token
+gitlab_secret_token: 'changeme'
+# IP address of the Gitaly instance
+gitaly_instance_ip: "127.0.0.1"
+# Port of the Gitaly instance
+gitaly_instance_port: "8075"
+
+# Whether to enable email
+gitlab_email_enabled: "false"
+# Whether to enavle LDAP
+gitlab_ldap_enabled: "false"
+# Whether to enable SMTP
+gitlab_smtp_enable: "false"
+# Whether to enable GitLab Registry
+gitlab_registry_enable: "false"
 
 ...

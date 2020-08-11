@@ -10,8 +10,14 @@
     - name: Install dependencies
       apt:
         name:
-          - sudo              # for `become` privilege escalation
+          - sudo      # for `become` privilege escalation
+          - iproute2  # for gathering network facts
         state: present
         update_cache: yes
+    # Provisioning freezes and GitLab "waits for redis server socket" on task "GitLab reconfigure" if file ".dockerenv" exists!
+    - name: Remove file so GitLab Omnibus does not wait for redis server socket on task GitLab reconfigure.
+      file:
+        path: /.dockerenv
+        state: absent
 
 ...

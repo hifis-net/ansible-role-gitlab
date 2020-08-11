@@ -4,6 +4,15 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-# handlers file for gitlab-role
+
+- name: Reconfigure GitLab
+  become: yes
+  command: gitlab-ctl reconfigure
+  register: gitlab_reconfigure
+
+- name: Restart GitLab
+  become: yes
+  command: gitlab-ctl restart
+  register: gitlab_restart
 
 ...
