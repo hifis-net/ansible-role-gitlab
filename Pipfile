@@ -13,7 +13,6 @@ yamllint = "*"
 ansible-lint = "*"
 molecule = {extras = ["docker"], version = "*"}
 reuse = "*"
-Pygments = "*"
 
 [packages]
 ansible = "~=2.9.9"
