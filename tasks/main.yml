@@ -13,9 +13,9 @@
 
 - name: Configure GitLab.
   become: yes
-  command: >
-    gitlab-ctl reconfigure
-    creates=/var/opt/gitlab/bootstrapped
+  command:
+    cmd: gitlab-ctl reconfigure
+    creates: /var/opt/gitlab/bootstrapped
 
 - name: Copy GitLab Configuration File.
   become: yes
