@@ -11,11 +11,11 @@ gitlab_rails['backup_keep_time'] = "{{ gitlab_backup_keep_time }}"
 gitlab_rails['backup_path'] = "{{ gitlab_backup_path }}"
 
 nginx['listen_port'] = "{{ nginx_listen_port }}"
-nginx['listen_https'] = "{{ nginx_listen_https }}"
-nginx['redirect_http_to_https'] = "{{ nginx_redirect_http_to_https }}"
+nginx['listen_https'] = {{ nginx_listen_https }}
+nginx['redirect_http_to_https'] = {{ nginx_redirect_http_to_https }}
 
 {% if not use_internal_redis %}
-redis['enable'] = "false"
+redis['enable'] = false
 gitlab_rails['redis_password'] = "{{ redis_password }}"
 redis['master_name'] = "{{ redis_cluster_name }}"
 redis['master_password'] = "{{ redis_password }}"
@@ -30,7 +30,7 @@ gitlab_rails['monitoring_whitelist'] = ["{{ gitlab_ip_range }}"]
 {% if use_internal_gitaly %}
 git_data_dirs({"default" => {"path" => "{{ gitlab_git_data_dir }}"} })
 {% else %}
-gitaly['enable'] = "false"
+gitaly['enable'] = false
 gitlab_rails['gitaly_token'] = "{{ gitlab_gitaly_token }}"
 gitlab_shell['secret_token'] = "{{ gitlab_secret_token }}"
 git_data_dirs({
@@ -38,10 +38,10 @@ git_data_dirs({
 })
 {% endif %}
 
-gitlab_rails['gitlab_email_enabled'] = "{{ gitlab_email_enabled }}"
-gitlab_rails['ldap_enabled'] = "{{ gitlab_ldap_enabled }}"
-gitlab_rails['smtp_enable'] = "{{ gitlab_smtp_enable }}"
-registry['enable'] = "{{ gitlab_registry_enable }}"
+gitlab_rails['gitlab_email_enabled'] = {{ gitlab_email_enabled }}
+gitlab_rails['ldap_enabled'] = {{ gitlab_ldap_enabled }}
+gitlab_rails['smtp_enable'] = {{ gitlab_smtp_enable }}
+registry['enable'] = {{ gitlab_registry_enable }}
 
 {% if not use_internal_postgresql %}
 # Disable the bundled Omnibus provided PostgreSQL
