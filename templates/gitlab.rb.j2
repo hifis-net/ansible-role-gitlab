@@ -42,3 +42,13 @@ gitlab_rails['gitlab_email_enabled'] = "{{ gitlab_email_enabled }}"
 gitlab_rails['ldap_enabled'] = "{{ gitlab_ldap_enabled }}"
 gitlab_rails['smtp_enable'] = "{{ gitlab_smtp_enable }}"
 registry['enable'] = "{{ gitlab_registry_enable }}"
+
+{% if not use_internal_postgresql %}
+# Disable the bundled Omnibus provided PostgreSQL
+postgresql['enable'] = false
+# PostgreSQL connection details
+gitlab_rails['db_adapter'] = 'postgresql'
+gitlab_rails['db_encoding'] = 'unicode'
+gitlab_rails['db_host'] = "{{ postgresql_db_host }}"
+gitlab_rails['db_password'] = "{{ postgresql_db_password }}"
+{% endif %}

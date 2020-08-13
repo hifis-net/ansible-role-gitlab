@@ -65,4 +65,11 @@ gitlab_smtp_enable: "false"
 # Whether to enable GitLab Registry
 gitlab_registry_enable: "false"
 
+# Whether to use GitLab Omnibus internal PostgreSQL database
+use_internal_postgresql: "true"
+# External PostgreSQL database host IP / domain
+postgresql_db_host: "127.0.0.1"
+# External PostgreSQL database password
+postgresql_db_password: "changeme"
+
 ...
