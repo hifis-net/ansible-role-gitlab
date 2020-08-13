@@ -20,8 +20,8 @@ gitlab_rails['redis_password'] = "{{ redis_password }}"
 redis['master_name'] = "{{ redis_cluster_name }}"
 redis['master_password'] = "{{ redis_password }}"
 gitlab_rails['redis_sentinels'] = [
-{% for redis_ip in redis_ips %}
-    { "host" => "{{ redis_ip }}", "port" => 26379 },
+{% for redis_sentinel_ip in redis_sentinel_ips %}
+    { "host" => "{{ redis_sentinel_ip }}", "port" => "{{ redis_sentinel_port }}" },
 {% endfor %}
 ]
 gitlab_rails['monitoring_whitelist'] = ["{{ gitlab_ip_range }}"]
