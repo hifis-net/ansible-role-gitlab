@@ -52,3 +52,30 @@ gitlab_rails['db_encoding'] = 'unicode'
 gitlab_rails['db_host'] = "{{ postgresql_db_host }}"
 gitlab_rails['db_password'] = "{{ postgresql_db_password }}"
 {% endif %}
+
+{#
+Code Attribution / Terms of Use: This derived code snippet is attributed
+to the work of Jeff Geerling which is originally licensed under the MIT License:
+https://github.com/geerlingguy/ansible-role-gitlab/blob/master/templates/gitlab.rb.j2
+Usage example:
+gitlab_additional_configurations:
+  - registry:
+    - key: "enable"
+      type: "plain"
+      value: "false"
+Resulting configuration:
+registry["enable"] = false
+#}
+{% if gitlab_additional_configurations is defined %}
+{% for configurations in gitlab_additional_configurations %}
+{% for config in configurations %}
+{% for kvpair in configurations[config] %}
+{% if (kvpair.type is defined and kvpair.type == 'plain') or (kvpair.value is not string) %}
+{{ config }}['{{ kvpair.key }}'] = {{ kvpair.value }}
+{% else %}
+{{ config }}['{{ kvpair.key }}'] = '{{ kvpair.value }}'
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endif %}
