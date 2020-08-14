@@ -18,7 +18,16 @@
     dest: "{{ gitlab_configuration_file_path }}"
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
   notify: Reconfigure GitLab
+
+- name: Create file to prevent Gitlab to restart before migrations
+  file:
+    path: /etc/gitlab/skip-auto-reconfigure
+    state: present
+    owner: root
+    group: root
+    mode: '0644'
+  when: gitlab_is_primary
 
 ...
