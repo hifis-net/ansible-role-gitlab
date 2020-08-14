@@ -57,14 +57,24 @@ gitlab_rails['db_password'] = "{{ postgresql_db_password }}"
 Code Attribution / Terms of Use: This derived code snippet is attributed
 to the work of Jeff Geerling which is originally licensed under the MIT License:
 https://github.com/geerlingguy/ansible-role-gitlab/blob/master/templates/gitlab.rb.j2
-Usage example:
+Configurations are mostly done via key-value pairs.
+This is a generic way to add custom key-value pairs to GitLab's configuration file.
+Usage example by setting Ansible variables:
 gitlab_additional_configurations:
-  - registry:
-    - key: "enable"
-      type: "plain"
-      value: "false"
+  - gitlab_rails:
+      - key: "time_zone"
+        value: "Europe/Berlin"
+  - nginx:
+      - key: "listen_port"
+        type: "plain"
+        value: "80"
+      - key: "listen_https"
+        type: "plain"
+        value: "false"
 Resulting configuration:
-registry["enable"] = false
+gitlab_rails['time_zone'] = 'Europe/Berlin'
+nginx['listen_port'] = 80
+nginx['listen_https'] = false
 #}
 {% if gitlab_additional_configurations is defined %}
 {% for configurations in gitlab_additional_configurations %}
