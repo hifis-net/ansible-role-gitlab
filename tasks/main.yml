@@ -4,6 +4,21 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-# tasks file for gitlab-role
+
+- name: Install GitLab Dependencies.
+  become: yes
+  package:
+    name: "{{ gitlab_dependencies_only }}"
+    state: present
+
+- name: Copy GitLab Configuration File.
+  become: yes
+  template:
+    src: "{{ gitlab_configuration_file_template }}"
+    dest: "{{ gitlab_configuration_file_path }}"
+    owner: root
+    group: root
+    mode: 0644
+  notify: Reconfigure GitLab
 
 ...
