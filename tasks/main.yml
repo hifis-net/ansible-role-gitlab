@@ -11,6 +11,17 @@
     name: "{{ gitlab_dependencies_only }}"
     state: present
 
+- name: Copy gitlab-secrets.json
+  copy:
+    src: "{{ gitlab_secrets_file }}"
+    dest: /etc/gitlab/gitlab-secrets.json
+    owner: root
+    group: root
+    mode: '0600'
+    backup: yes
+  when: gitlab_secrets_file is defined
+  notify: Reconfigure GitLab
+
 - name: Copy GitLab Configuration File.
   become: yes
   template:
