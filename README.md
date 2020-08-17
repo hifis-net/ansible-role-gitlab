@@ -13,10 +13,7 @@ Ansible role to configure GitLab Omnibus installation.
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role 
-should be mentioned here. For instance, if the role uses the EC2 module, 
-it may be a good idea to mention in this section that the boto package is 
-required.
+None
 
 Role Variables
 --------------
@@ -116,17 +113,22 @@ nginx_redirect_http_to_https: 'false'
 
 ###### Switch to Use External Redis Instance
 
+Set switch to `false` to enable external Redis instance:
+
 ```yaml
 use_internal_redis: 'false'
 ```
 
 ###### Password to Authenticate Redis Services within Cluster
 
-You have to use your own private and encrypted password here:
+It is recommended to enable authentication for Redis Master, Redis Replica and 
+Redis Sentinel by providing the respective password:
 
 ```yaml
 redis_password: 'changeme'
 ```
+
+_Caution: You have to use your own private and encrypted password here._
 
 ###### Reference Name of the Redis Cluster
 
@@ -138,7 +140,7 @@ redis_cluster_name: 'redis-cluster'
 
 ###### List of IP addresses of Redis Sentinel Servers
 
-Add a list of IP addresses of the involved Redis Sentinel Servers:
+Add a list of IP addresses of the involved Redis Sentinel servers:
 
 ```yaml
 redis_sentinel_ips:
@@ -149,20 +151,101 @@ redis_sentinel_ips:
 
 ###### Port on Which Redis Sentinel Servers are Listening
 
-Choose port on which Redis Sentinel Servers are listening:
+Choose port on which Redis Sentinel servers are listening:
 
 ```yaml
 redis_sentinel_port: '26379'
 ```
 
-###### Whitelist the GitLab IP Address for Redis Sentinel Servers
+###### Whitelist IP Address Range for Monitoring Redis Sentinel Servers
 
-Range of IP addresses of GitLab instances needs to be white-listed for the 
-involved Redis Sentinel Servers:
+Range of GitLab IP addresses that are allowed to monitor Redis Sentinel servers:
 
 ```yaml
 gitlab_ip_range: '{{ ansible_default_ipv4.address }}/24'
 ```
+
+### Variables to be Set if External Gitaly is Used
+
+###### Switch to Use External Gitaly Instance
+
+Set switch to `false` to enable external Gitaly instance:
+
+```yaml
+use_internal_gitaly: 'false'
+```
+
+###### Path to GitLab Data Directory
+
+Specify where to put the GitLab data directory:
+
+```yaml
+gitlab_git_data_dir: "/var/opt/gitlab/git-data"
+```
+
+###### Gitaly Authentication Token
+
+A Gitaly authentication token needs to be given:
+
+```yaml
+gitlab_gitaly_token: 'changeme'
+```
+
+_Caution: You have to use your own private and encrypted password here._
+
+###### GitLab Shell Token
+
+A GitLab shell token needs to be given:
+
+```yaml
+gitlab_secret_token: 'changeme'
+```
+
+_Caution: You have to use your own private and encrypted password here._
+
+###### Gitaly IP Address
+
+Specify IP address of the Gitaly instance:
+
+```yaml
+gitaly_instance_ip: '127.0.0.1'
+```
+
+###### Gitaly Port
+
+Specify port of the Gitaly instance:
+
+```yaml
+gitaly_instance_port: '8075'
+```
+
+### Variables to be Set if External PostgreSQL Database is Used
+
+###### Switch to Use External PostgreSQL Database Instance
+
+Set switch to `false` to enable external PostgreSQL Database instance:
+
+```yaml
+use_internal_postgresql: 'false'
+```
+
+###### IP Address of External PostgreSQL Database Instance
+
+Set IP Address of PostgreSQL Database instance:
+
+```yaml
+postgresql_db_host: '127.0.0.1'
+```
+
+###### Password for External PostgreSQL Database Instance
+
+Set password of PostgreSQL Database instance:
+
+```yaml
+postgresql_db_password: 'changeme'
+```
+
+_Caution: You have to use your own private and encrypted password here._
 
 ### Additional Configurations given as Role Variables
 
@@ -207,15 +290,6 @@ Dependencies
 This GitLab Role depends on 
 [GitLab Base Role](https://gitlab.com/hifis/ansible/gitlab-base-role.git) 
 which installs the GitLab Omnibus package.
-
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
 
 License
 -------
