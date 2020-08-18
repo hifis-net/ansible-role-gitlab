@@ -30,7 +30,7 @@ the important role variables described in the next section.
 Give the URL of your GitLab instance:
 
 ```yaml
-gitlab_external_url: 'http://localhost'
+gitlab_external_url: 'https://gitlab.example.com'
 ```
 
 ###### Timezone to Be Used by GitLab
