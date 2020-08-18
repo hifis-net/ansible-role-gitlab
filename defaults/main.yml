@@ -5,6 +5,9 @@
 
 ---
 
+# Specify whether this is the GitLab primary node
+gitlab_is_primary: false
+
 # GitLab dependencies to install
 gitlab_dependencies_only:
   - "tzdata"

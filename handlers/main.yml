@@ -9,10 +9,11 @@
   become: yes
   command: gitlab-ctl reconfigure
   register: gitlab_reconfigure
+  environment:
+    SKIP_POST_DEPLOYMENT_MIGRATIONS: "{{ gitlab_is_primary }}"
 
 - name: Restart GitLab
   become: yes
   command: gitlab-ctl restart
   register: gitlab_restart
-
 ...
