@@ -13,12 +13,276 @@ Ansible role to configure GitLab Omnibus installation.
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+### Mandatory Role Variables with No Defaults
+
+There are no role variables without defaults, but you should carefully choose
+the important role variables described in the next section.
+
+### Important Role Variables
+
+###### URL of your GitLab Instance
+
+Give the URL of your GitLab instance:
+
+```yaml
+gitlab_external_url: 'https://gitlab.example.com'
+```
+
+###### Timezone to Be Used by GitLab
+
+Choose the timezone to be used by GitLab:
+
+```yaml
+gitlab_time_zone: 'Europe/Berlin'
+```
+
+###### Period of Time to Keep Backups
+
+Set the period of time (in seconds) to keep your GitLab backups:
+
+```yaml
+gitlab_backup_keep_time: '604800'
+```
+
+### Optional Role Variables
+
+###### Name of Template for GitLab's Configuration File
+
+Specify the name of the template for GitLab's configuration file which 
+will be transformed into GitLab's configuration file:
+
+```yaml
+gitlab_configuration_file_template: 'gitlab.rb.j2'
+```
+
+###### Path to GitLab's Configuration File
+
+Specify the path of the template for GitLab's configuration file which 
+contains custom configurations of your GitLab instance:
+
+```yaml
+gitlab_configuration_file_path: '/etc/gitlab/gitlab.rb'
+```
+
+###### GitLab Theme to Be Used by Default
+
+Choose the Default Theme to be used for new GitLab users:
+
+```yaml
+gitlab_default_theme: '2'
+```
+
+###### Path to GitLab Backups
+
+Set the path to the GitLab backups:
+
+```yaml
+gitlab_backup_path: '/var/opt/gitlab/backups'
+```
+
+###### Port on Which Web-Server Nginx is Listening on
+
+Set the port GitLab's web-server Nginx is listening on:
+
+```yaml
+nginx_listen_port: '80'
+```
+
+###### Does Web-Server Nginx accept HTTPS Requests?
+
+Choose whether GitLab's web-server Nginx accepts HTTPS requests:
+
+```yaml
+nginx_listen_https: 'false'
+```
+
+###### Does Web-Server Nginx Redirect HTTP Requests to HTTPS?
+
+Choose whether GitLab's web-server Nginx redirects HTTP requests to HTTPS:
+
+```yaml
+nginx_redirect_http_to_https: 'false'
+```
+
+### Variables to be Set if External Redis is Used
+
+###### Switch to Use External Redis Instance
+
+Set switch to `false` to enable external Redis instance:
+
+```yaml
+use_internal_redis: 'false'
+```
+
+###### Password to Authenticate Redis Services within Cluster
+
+It is recommended to enable authentication for Redis Master, Redis Replica and 
+Redis Sentinel by providing the respective password:
+
+```yaml
+redis_password: 'changeme'
+```
+
+_Caution: You have to use your own private and encrypted password here._
+
+###### Reference Name of the Redis Cluster
+
+Choose a name of the Redis Cluster for references:
+
+```yaml
+redis_cluster_name: 'redis-cluster'
+```
+
+###### List of IP addresses of Redis Sentinel Servers
+
+Add a list of IP addresses of the involved Redis Sentinel servers:
+
+```yaml
+redis_sentinel_ips:
+  - '192.168.33.11'
+  - '192.168.33.12'
+  - '192.168.33.13'
+```
+
+###### Port on Which Redis Sentinel Servers are Listening
+
+Choose port on which Redis Sentinel servers are listening:
+
+```yaml
+redis_sentinel_port: '26379'
+```
+
+###### Whitelist IP Address Range for Monitoring Redis Sentinel Servers
+
+Range of GitLab IP addresses that are allowed to monitor Redis Sentinel servers:
+
+```yaml
+gitlab_ip_range: '{{ ansible_default_ipv4.address }}/24'
+```
+
+### Variables to be Set if External Gitaly is Used
+
+###### Switch to Use External Gitaly Instance
+
+Set switch to `false` to enable external Gitaly instance:
+
+```yaml
+use_internal_gitaly: 'false'
+```
+
+###### Path to GitLab Data Directory
+
+Specify where to put the GitLab data directory:
+
+```yaml
+gitlab_git_data_dir: "/var/opt/gitlab/git-data"
+```
+
+###### Gitaly Authentication Token
+
+A Gitaly authentication token needs to be given:
+
+```yaml
+gitlab_gitaly_token: 'changeme'
+```
+
+_Caution: You have to use your own private and encrypted password here._
+
+###### GitLab Shell Token
+
+A GitLab shell token needs to be given:
+
+```yaml
+gitlab_secret_token: 'changeme'
+```
+
+_Caution: You have to use your own private and encrypted password here._
+
+###### Gitaly IP Address
+
+Specify IP address of the Gitaly instance:
+
+```yaml
+gitaly_instance_ip: '127.0.0.1'
+```
+
+###### Gitaly Port
+
+Specify port of the Gitaly instance:
+
+```yaml
+gitaly_instance_port: '8075'
+```
+
+### Variables to be Set if External PostgreSQL Database is Used
+
+###### Switch to Use External PostgreSQL Database Instance
+
+Set switch to `false` to enable external PostgreSQL Database instance:
+
+```yaml
+use_internal_postgresql: 'false'
+```
+
+###### IP Address of External PostgreSQL Database Instance
+
+Set IP Address of PostgreSQL Database instance:
+
+```yaml
+postgresql_db_host: '127.0.0.1'
+```
+
+###### Password for External PostgreSQL Database Instance
+
+Set password of PostgreSQL Database instance:
+
+```yaml
+postgresql_db_password: 'changeme'
+```
+
+_Caution: You have to use your own private and encrypted password here._
+
+### Additional Configurations given as Role Variables
+
+Any other key-value pair that is not yet part of GitLab's configuration file
+can be given by Ansible role variables.
+
+**Code Attribution / Terms of Use:**
+
+This idea of
+[generic key-value pairs](https://github.com/geerlingguy/ansible-role-gitlab/blob/master/templates/gitlab.rb.j2)
+is attributed to the work of 
+[Jeff Geerling](https://github.com/geerlingguy)
+which is originally licensed under the MIT License.
+
+**Usage example:**
+
+```yaml
+gitlab_additional_configurations:
+  - gitlab_rails:
+      - key: "time_zone"
+        value: "Europe/Berlin"
+  - nginx:
+      - key: "listen_port"
+        type: "plain"
+        value: "80"
+      - key: "listen_https"
+        type: "plain"
+        value: "false"
+```
+
+**Resulting configuration:**
+
+```ruby
+gitlab_rails['time_zone'] = 'Europe/Berlin'
+nginx['listen_port'] = 80
+nginx['listen_https'] = false
+```
 
 Dependencies
 ------------
@@ -26,15 +290,6 @@ Dependencies
 This GitLab Role depends on 
 [GitLab Base Role](https://gitlab.com/hifis/ansible/gitlab-base-role.git) 
 which installs the GitLab Omnibus package.
-
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
 
 License
 -------
