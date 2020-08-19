@@ -20,4 +20,4 @@ Group your changes into these categories:
 
 ### Added
 
-Initial release of the Ansible Gitaly Role.
+Initial release of the Ansible GitLab Role.
