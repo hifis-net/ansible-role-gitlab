@@ -33,9 +33,10 @@
   notify: Reconfigure GitLab
 
 - name: Create file to prevent Gitlab to restart before migrations
-  file:
-    path: /etc/gitlab/skip-auto-reconfigure
-    state: present
+  copy:
+    content: ""
+    dest: /etc/gitlab/skip-auto-reconfigure
+    force: no
     owner: root
     group: root
     mode: '0644'
