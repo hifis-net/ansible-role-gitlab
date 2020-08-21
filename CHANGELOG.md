@@ -16,7 +16,9 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
-## [Unreleased]
+## [[0.1.1]](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.1.1) - 2020-08-21
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.1.0...v0.1.1)
 
 ### Fixed
 - Fix creation of skip-auto-reconfigure file
