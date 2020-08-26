@@ -247,6 +247,23 @@ postgresql_db_password: 'changeme'
 
 _Caution: You have to use your own private and encrypted password here._
 
+#### Configure GitLab Registry
+
+Enable GitLab container registry:
+```yaml
+gitlab_registry_enable: "true"
+```
+
+Specify the external URL of the container registry.
+```yaml
+gitlab_registry_external_url: "https://gitlab.example.de:5005"
+```
+
+_Please note_: If you do not run a load balancer in front of GitLab and let
+NGinx care about SSL encryption, please also configure
+`registry_nginx['ssl_certificate']` and `registry_nginx['ssl_certificate_key']`
+via `gitlab_additional_configurations`.
+
 ### Additional Configurations given as Role Variables
 
 Any other key-value pair that is not yet part of GitLab's configuration file

@@ -72,7 +72,11 @@ gitlab_email_enabled: "false"
 gitlab_ldap_enabled: "false"
 # Whether to enable SMTP
 gitlab_smtp_enable: "false"
+
+# Registry configuration
 # Whether to enable GitLab Registry
 gitlab_registry_enable: "false"
+# External URL for the container registry
+gitlab_registry_external_url: "http://localhost:5005"
 
 ...
