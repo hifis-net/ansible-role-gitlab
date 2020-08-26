@@ -16,9 +16,9 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
-## [Unreleased]
+## [[0.2.0]](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.2.0) - 2020-08-26
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.1.1...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.1.1...v0.2.0)
 
 ### Added
 - Implement a basic configuration for the container registry
