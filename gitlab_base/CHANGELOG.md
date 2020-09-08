@@ -16,7 +16,16 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
-## [[0.1.0]](https://gitlab.com/hifis/ansible/gitlab-base-role/-/releases/v0.1.0) - 2020-08-20
+## Unreleased
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.1.0...master)
+
+### Added
+- Set Ansible fact that GitLab is upgraded during provisioning
+  ([!6](https://gitlab.com/hifis/ansible/gitlab-base-role/-/merge_requests/6)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
+
+## [0.1.0](https://gitlab.com/hifis/ansible/gitlab-base-role/-/releases/v0.1.0) - 2020-08-20
 
 ### Added
 

@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
+
 - name: Set OS distribution dependent variables
   include_vars: "{{ ansible_facts['distribution'] }}.yml"
 
@@ -68,10 +69,17 @@
         sslcacert: /etc/pki/tls/certs/ca-bundle.crt
         metadata_expire: '300'
 
-- name: Install GitLab.
+- name: Install or upgrade GitLab.
   become: yes
   package:
     name: "{{ gitlab_package_name }}"
     state: present
+    update_cache: yes
+  register: gitlab_install_output
+
+# Set flag whether GitLab has been freshly installed or upgraded which triggers further upgrade steps later on.
+- name: Determine whether GitLab has been freshly installed or upgraded.
+  set_fact:
+    gitlab_is_upgraded: "{{ gitlab_install_output.changed }}"
 
 ...
