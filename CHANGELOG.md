@@ -16,7 +16,20 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
-## [[0.2.0]](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.2.0) - 2020-08-26
+## Unreleased
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.0...master)
+
+## [0.3.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.0) - 2020-09-08
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.2.0...v0.3.0)
+
+### Added
+- Trigger GitLab reconfigure if GitLab package has been installed or upgraded
+  ([!16](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/16)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
+
+## [0.2.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.2.0) - 2020-08-26
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.1.1...v0.2.0)
 
@@ -25,7 +38,7 @@ Group your changes into these categories:
   ([!14](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/14)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
 
-## [[0.1.1]](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.1.1) - 2020-08-21
+## [0.1.1](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.1.1) - 2020-08-21
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.1.0...v0.1.1)
 
@@ -34,7 +47,7 @@ Group your changes into these categories:
   ([!12](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/12)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
 
-## [[0.1.0]](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.1.0) - 2020-08-20
+## [0.1.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.1.0) - 2020-08-20
 
 ### Added
 
