@@ -42,4 +42,10 @@
     mode: '0644'
   when: gitlab_is_primary
 
+- name: Trigger GitLab reconfigure on GitLab package install or upgrade.
+  debug:
+    msg: "Reconfigure GitLab due to GitLab package install or upgrade."
+  notify: Reconfigure GitLab
+  when: gitlab_is_upgraded is defined and gitlab_is_upgraded
+
 ...
