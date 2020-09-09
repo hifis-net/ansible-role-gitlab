@@ -18,7 +18,16 @@ Group your changes into these categories:
 
 ## Unreleased
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.2.0...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.2.1...master)
+
+## [0.2.1](https://gitlab.com/hifis/ansible/gitlab-base-role/-/releases/v0.2.1) - 2020-09-09
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.2.0...v0.2.1)
+
+### Fixed
+- Add trigger for handler 'GitLab reconfigure' if GitLab upgrade has been performed
+  ([!8](https://gitlab.com/hifis/ansible/gitlab-base-role/-/merge_requests/8)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
 
 ## [0.2.0](https://gitlab.com/hifis/ansible/gitlab-base-role/-/releases/v0.2.0) - 2020-09-08
 
