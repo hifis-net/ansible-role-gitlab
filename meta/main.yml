@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 galaxy_info:
-  role_name: gitlab-role
+  role_name: gitlab_role
 
   author: HIFIS Software Team
   description: Configure official GitLab Omnibus package
@@ -24,6 +24,6 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies:
-  - role: gitlab_base
+  - role: gitlab_base_role
 
 ...
