@@ -11,9 +11,11 @@
   register: gitlab_reconfigure
   environment:
     SKIP_POST_DEPLOYMENT_MIGRATIONS: "{{ gitlab_is_primary }}"
+  listen: GitLab has been installed or upgraded
 
 - name: Restart GitLab
   become: yes
   command: gitlab-ctl restart
   register: gitlab_restart
+
 ...
