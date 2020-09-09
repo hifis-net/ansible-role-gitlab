@@ -23,9 +23,7 @@ galaxy_info:
       versions:
         - focal
 
-  galaxy_tags:
-    - gitlab
-
-dependencies: []
+dependencies:
+  - role: gitlab_role
 
 ...
