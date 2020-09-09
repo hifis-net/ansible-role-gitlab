@@ -46,6 +46,6 @@
   debug:
     msg: "Reconfigure GitLab due to GitLab package install or upgrade."
   notify: Reconfigure GitLab
-  when: gitlab_is_upgraded is defined and gitlab_is_upgraded
+  when: gitlab_install_output is defined and gitlab_install_output.changed
 
 ...
