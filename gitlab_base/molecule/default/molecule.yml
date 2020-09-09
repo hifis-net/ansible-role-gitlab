@@ -4,14 +4,13 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
+
 dependency:
   name: galaxy
-  options:
-    role-file: requirements.yml
 driver:
   name: docker
 platforms:
-  - name: instance
+  - name: instance_gitlab_base
     image: jrei/systemd-${MOLECULE_DISTRO:-ubuntu:20.04}
     pre_build_image: true
     privileged: true
@@ -28,9 +27,11 @@ provisioner:
     converge: converge.yml
 #  inventory:
 #    host_vars:
-#      instance:
+#      instance_gitlab_base:
 #        gitlab_edition: "gitlab-ce"
 #        gitlab_version: "13.2.1"
 #        gitlab_release: "ce.0.el8"
 verifier:
   name: ansible
+
+...

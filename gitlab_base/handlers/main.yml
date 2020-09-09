@@ -4,4 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
-# handlers file for gitlab-base-role
+
+- name: GitLab has been installed or upgraded
+  become: yes
+  set_fact:
+    gitlab_is_upgraded: "{{ gitlab_install_output is defined and gitlab_install_output.changed }}"
+
+...

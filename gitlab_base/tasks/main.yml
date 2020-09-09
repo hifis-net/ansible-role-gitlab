@@ -75,7 +75,7 @@
     name: "{{ gitlab_package_name }}"
     state: present
     update_cache: yes
-  notify: Reconfigure GitLab
   register: gitlab_install_output
+  notify: GitLab has been installed or upgraded
 
 ...
