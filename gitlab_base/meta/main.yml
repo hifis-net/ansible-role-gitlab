@@ -23,6 +23,9 @@ galaxy_info:
       versions:
         - focal
 
+  galaxy_tags:
+    - gitlab
+
 dependencies: []
 
 ...
