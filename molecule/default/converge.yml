@@ -4,11 +4,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
+
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include gitlab-role"
+    - name: "Include gitlab_role"
       include_role:
-        name: "gitlab-role"
+        name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
 
 ...

@@ -18,16 +18,25 @@ Group your changes into these categories:
 
 ## Unreleased
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.1...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.2...master)
+
+## [0.3.2](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.2) - 2020-09-10
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.1...v0.3.2)
+
+### Fixed
+- Handler 'Reconfigure GitLab' needs to listens to handler 'GitLab has been installed or upgraded'
+  ([!19](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/19)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
 
 ## [0.3.1](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.1) - 2020-09-09
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.0...v0.3.1)
 
 ### Fixed
 - Fix reconfigure handler not run when GitLab package is upgraded
   ([!17](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/17)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
-
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.0...v0.3.1)
 
 ## [0.3.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.0) - 2020-09-08
 
