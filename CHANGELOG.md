@@ -22,6 +22,8 @@ Group your changes into these categories:
 
 ## [0.3.2](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.2) - 2020-09-10
 
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.1...v0.3.2)
+
 ### Fixed
 - Handler 'Reconfigure GitLab' needs to listens to handler 'GitLab has been installed or upgraded'
   ([!19](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/19)
