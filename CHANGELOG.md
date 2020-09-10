@@ -18,7 +18,16 @@ Group your changes into these categories:
 
 ## Unreleased
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.2...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.3...master)
+
+## [0.3.3](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.3) - 2020-09-10
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.2...v0.3.3)
+
+### Fixed
+- Rename role 'gitlab_base_role' to 'gitlab_base' in meta and requirements files
+  ([20](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/20)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
 
 ## [0.3.2](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.2) - 2020-09-10
 
