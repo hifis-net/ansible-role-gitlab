@@ -7,6 +7,6 @@
 roles:
   - name: gitlab_base_role
     src: git+https://gitlab.com/hifis/ansible/gitlab-base-role.git
-    version: 9-add-trigger-to-gitlab-reconfigure-in-gitlab-role
+    version: master
 
 ...
