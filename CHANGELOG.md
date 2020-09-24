@@ -18,7 +18,20 @@ Group your changes into these categories:
 
 ## Unreleased
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.3...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.4...master)
+
+## [0.3.4](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.4) - 2020-09-24
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.3...v0.3.4)
+
+### Fixed
+
+- Create file skip-auto-backup on non-primary GitLab nodes
+  ([!21](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/21)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
+- Split handler to reconfigure GitLab into one for primary and one for non-primary nodes
+  ([!22](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/22)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
 
 ## [0.3.3](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.3) - 2020-09-10
 
@@ -26,7 +39,7 @@ Group your changes into these categories:
 
 ### Fixed
 - Rename role 'gitlab_base_role' to 'gitlab_base' in meta and requirements files
-  ([20](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/20)
+  ([!20](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/20)
   by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
 
 ## [0.3.2](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.2) - 2020-09-10
