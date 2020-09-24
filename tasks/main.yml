@@ -20,7 +20,9 @@
     mode: '0600'
     backup: yes
   when: gitlab_secrets_file is defined
-  notify: Reconfigure GitLab
+  notify:
+    - Reconfigure Primary GitLab
+    - Reconfigure Non Primary GitLab
 
 - name: Copy GitLab Configuration File.
   become: yes
@@ -30,7 +32,9 @@
     owner: root
     group: root
     mode: '0644'
-  notify: Reconfigure GitLab
+  notify:
+    - Reconfigure Primary GitLab
+    - Reconfigure Non Primary GitLab
 
 - name: Create file to prevent Gitlab to restart before migrations
   copy:
