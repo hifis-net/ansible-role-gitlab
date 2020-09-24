@@ -5,13 +5,21 @@
 
 ---
 
-- name: Reconfigure GitLab
+- name: Reconfigure Primary GitLab
   become: yes
   command: gitlab-ctl reconfigure
   register: gitlab_reconfigure
   environment:
-    SKIP_POST_DEPLOYMENT_MIGRATIONS: "{{ gitlab_is_primary }}"
+    SKIP_POST_DEPLOYMENT_MIGRATIONS: true
   listen: GitLab has been installed or upgraded
+  when: gitlab_is_primary
+
+- name: Reconfigure Non Primary GitLab
+  become: yes
+  command: gitlab-ctl reconfigure
+  register: gitlab_reconfigure
+  listen: GitLab has been installed or upgraded
+  when: not gitlab_is_primary
 
 - name: Restart GitLab
   become: yes
