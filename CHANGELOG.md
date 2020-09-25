@@ -20,6 +20,11 @@ Group your changes into these categories:
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.4...master)
 
+### Changed
+- Bump dependency Ansible to ansible = "~=2.10.0"
+  ([!25](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/25)
+  by [tobiashuste](https://gitlab.com/tobiashuste)).
+
 ## [0.3.4](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.3.4) - 2020-09-24
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.3...v0.3.4)
