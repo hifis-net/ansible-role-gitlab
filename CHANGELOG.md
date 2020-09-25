@@ -21,6 +21,9 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.4...master)
 
 ### Changed
+- Improve and speed up the CI pipeline
+  ([!24](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/24)
+  by [tobiashuste](https://gitlab.com/tobiashuste)).
 - Bump dependency Ansible to ansible = "~=2.10.0"
   ([!25](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/25)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
