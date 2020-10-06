@@ -20,6 +20,11 @@ Group your changes into these categories:
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.4...master)
 
+### Added
+- Supply generic way to configure "external URLs" of different GitLab services via Ansible variables
+  ([!27](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/27)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
+
 ### Changed
 - Improve and speed up the CI pipeline
   ([!24](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/24)
