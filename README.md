@@ -266,6 +266,37 @@ via `gitlab_additional_configurations`.
 
 ### Additional Configurations given as Role Variables
 
+#### Configurations Regarding External URLs of Services
+
+External URls that are not yet part of GitLab's configuration file
+can be given by Ansible role variables.
+
+Note: 
+The external URL of GitLab itself is already given by variable 
+"external_url".
+
+**Usage example:**
+
+```yaml
+gitlab_external_url_configurations:
+  - key: "pages"
+    value: "https://pages.example.com"
+  - key: "registry"
+    value: "https://registry.example.com"
+  - key: "mattermost"
+    value: "https://mattermost.example.com"
+```
+
+**Resulting configuration:**
+
+```ruby
+registry_external_url "https://registry.example.com"
+pages_external_url "https://pages.example.com"
+mattermost_external_url "https://mattermost.example.com"
+```
+
+#### Configurations in Dictionary-like Variables
+
 Any other key-value pair that is not yet part of GitLab's configuration file
 can be given by Ansible role variables.
 

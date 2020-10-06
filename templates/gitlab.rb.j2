@@ -94,3 +94,22 @@ nginx['listen_https'] = false
 {% endfor %}
 {% endfor %}
 {% endif %}
+
+{#
+This is a generic way to add "external urls" for different services to GitLab's
+configuration file.
+Note: The external URL of GitLab itself is already given.
+Usage example by setting Ansible variables:
+gitlab_external_url_configurations:
+  - key: "pages"
+    value: "https://pages.example.com"
+  - key: "registry"
+    value: "https://registry.example.com"
+  - key: "mattermost"
+    value: "https://mattermost.example.com"
+#}
+{% if gitlab_external_url_configurations is defined %}
+{% for kvpair in gitlab_external_url_configurations %}
+{{ kvpair.key }}_external_url "{{ kvpair.value }}"
+{% endfor %}
+{% endif %}
