@@ -254,11 +254,6 @@ Enable GitLab container registry:
 gitlab_registry_enable: "true"
 ```
 
-Specify the external URL of the container registry.
-```yaml
-gitlab_registry_external_url: "https://gitlab.example.de:5005"
-```
-
 _Please note_: If you do not run a load balancer in front of GitLab and let
 NGinx care about SSL encryption, please also configure
 `registry_nginx['ssl_certificate']` and `registry_nginx['ssl_certificate_key']`
