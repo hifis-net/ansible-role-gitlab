@@ -42,11 +42,7 @@ gitlab_rails['gitlab_email_enabled'] = {{ gitlab_email_enabled }}
 gitlab_rails['ldap_enabled'] = {{ gitlab_ldap_enabled }}
 gitlab_rails['smtp_enable'] = {{ gitlab_smtp_enable }}
 
-# Basic configuration of GitLab registry.
 registry['enable'] = {{ gitlab_registry_enable }}
-{% if gitlab_registry_enable %}
-registry_external_url "{{ gitlab_registry_external_url }}"
-{% endif %}
 
 {% if not use_internal_postgresql %}
 # Disable the bundled Omnibus provided PostgreSQL
@@ -92,5 +88,23 @@ nginx['listen_https'] = false
 {% endif %}
 {% endfor %}
 {% endfor %}
+{% endfor %}
+{% endif %}
+
+{#
+This is a generic way to add Ruby function calls to the
+configuration file.
+Usage example by setting Ansible variables:
+gitlab_ruby_configuration_calls:
+  - key: "pages_external_url"
+    value: "https://pages.example.com"
+  - key: "registry_external_url"
+    value: "https://registry.example.com"
+  - key: "mattermost_external_url"
+    value: "https://mattermost.example.com"
+#}
+{% if gitlab_ruby_configuration_calls is defined %}
+{% for kvpair in gitlab_ruby_configuration_calls %}
+{{ kvpair.key }} "{{ kvpair.value }}"
 {% endfor %}
 {% endif %}

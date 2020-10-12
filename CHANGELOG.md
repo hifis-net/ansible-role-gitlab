@@ -18,7 +18,16 @@ Group your changes into these categories:
 
 ## Unreleased
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.4...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.4.0...master)
+
+## [0.4.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.4.0) - 2020-10-12
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.4...v0.4.0)
+
+### Added
+- Supply generic way to configure GitLab via Ansible variables that are translated to Ruby function calls
+  ([!27](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/27)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
 
 ### Changed
 - Improve and speed up the CI pipeline

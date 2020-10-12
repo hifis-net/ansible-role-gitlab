@@ -254,11 +254,6 @@ Enable GitLab container registry:
 gitlab_registry_enable: "true"
 ```
 
-Specify the external URL of the container registry.
-```yaml
-gitlab_registry_external_url: "https://gitlab.example.de:5005"
-```
-
 _Please note_: If you do not run a load balancer in front of GitLab and let
 NGinx care about SSL encryption, please also configure
 `registry_nginx['ssl_certificate']` and `registry_nginx['ssl_certificate_key']`
@@ -266,7 +261,12 @@ via `gitlab_additional_configurations`.
 
 ### Additional Configurations given as Role Variables
 
-Any other key-value pair that is not yet part of GitLab's configuration file
+Any other configurations that are not yet part of GitLab's configuration file
+can be given by Ansible role variables.
+
+#### Configurations via Dictionary-like Ruby Variables
+
+Ruby variables that are not part of GitLab's configuration file
 can be given by Ansible role variables.
 
 **Code Attribution / Terms of Use:**
@@ -299,6 +299,31 @@ gitlab_additional_configurations:
 gitlab_rails['time_zone'] = 'Europe/Berlin'
 nginx['listen_port'] = 80
 nginx['listen_https'] = false
+```
+
+#### Configurations via Ruby Function Calls
+
+Ruby function calls that are not part of GitLab's configuration file
+can be given by Ansible role variables.
+
+**Usage example:**
+
+```yaml
+gitlab_ruby_configuration_calls:
+  - key: "pages_external_url"
+    value: "https://pages.example.com"
+  - key: "registry_external_url"
+    value: "https://registry.example.com"
+  - key: "mattermost_external_url"
+    value: "https://mattermost.example.com"
+```
+
+**Resulting configuration:**
+
+```ruby
+registry_external_url "https://registry.example.com"
+pages_external_url "https://pages.example.com"
+mattermost_external_url "https://mattermost.example.com"
 ```
 
 Dependencies
