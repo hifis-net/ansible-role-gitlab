@@ -261,38 +261,12 @@ via `gitlab_additional_configurations`.
 
 ### Additional Configurations given as Role Variables
 
-#### Configurations Regarding External URLs of Services
-
-External URls that are not yet part of GitLab's configuration file
+Any other configurations that are not yet part of GitLab's configuration file
 can be given by Ansible role variables.
 
-Note: 
-The external URL of GitLab itself is already given by variable 
-"external_url".
+#### Configurations via Dictionary-like Ruby Variables
 
-**Usage example:**
-
-```yaml
-gitlab_external_url_configurations:
-  - key: "pages"
-    value: "https://pages.example.com"
-  - key: "registry"
-    value: "https://registry.example.com"
-  - key: "mattermost"
-    value: "https://mattermost.example.com"
-```
-
-**Resulting configuration:**
-
-```ruby
-registry_external_url "https://registry.example.com"
-pages_external_url "https://pages.example.com"
-mattermost_external_url "https://mattermost.example.com"
-```
-
-#### Configurations in Dictionary-like Variables
-
-Any other key-value pair that is not yet part of GitLab's configuration file
+Ruby variables that are not part of GitLab's configuration file
 can be given by Ansible role variables.
 
 **Code Attribution / Terms of Use:**
@@ -325,6 +299,31 @@ gitlab_additional_configurations:
 gitlab_rails['time_zone'] = 'Europe/Berlin'
 nginx['listen_port'] = 80
 nginx['listen_https'] = false
+```
+
+#### Configurations via Ruby Function Calls
+
+Ruby function calls that are not part of GitLab's configuration file
+can be given by Ansible role variables.
+
+**Usage example:**
+
+```yaml
+gitlab_ruby_configuration_calls:
+  - key: "pages_external_url"
+    value: "https://pages.example.com"
+  - key: "registry_external_url"
+    value: "https://registry.example.com"
+  - key: "mattermost_external_url"
+    value: "https://mattermost.example.com"
+```
+
+**Resulting configuration:**
+
+```ruby
+registry_external_url "https://registry.example.com"
+pages_external_url "https://pages.example.com"
+mattermost_external_url "https://mattermost.example.com"
 ```
 
 Dependencies

@@ -92,20 +92,19 @@ nginx['listen_https'] = false
 {% endif %}
 
 {#
-This is a generic way to add "external urls" for different services to GitLab's
+This is a generic way to add Ruby function calls to the
 configuration file.
-Note: The external URL of GitLab itself is already given.
 Usage example by setting Ansible variables:
-gitlab_external_url_configurations:
-  - key: "pages"
+gitlab_ruby_configuration_calls:
+  - key: "pages_external_url"
     value: "https://pages.example.com"
-  - key: "registry"
+  - key: "registry_external_url"
     value: "https://registry.example.com"
-  - key: "mattermost"
+  - key: "mattermost_external_url"
     value: "https://mattermost.example.com"
 #}
-{% if gitlab_external_url_configurations is defined %}
-{% for kvpair in gitlab_external_url_configurations %}
-{{ kvpair.key }}_external_url "{{ kvpair.value }}"
+{% if gitlab_ruby_configuration_calls is defined %}
+{% for kvpair in gitlab_ruby_configuration_calls %}
+{{ kvpair.key }} "{{ kvpair.value }}"
 {% endfor %}
 {% endif %}
