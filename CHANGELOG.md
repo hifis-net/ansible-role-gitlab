@@ -20,7 +20,7 @@ Group your changes into these categories:
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.4.0...master)
 
-## [0.4.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.4.0) - 2020-10-12
+## [0.4.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.4.0) - 2020-10-13
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.4...v0.4.0)
 
