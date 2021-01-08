@@ -69,6 +69,19 @@
         sslcacert: /etc/pki/tls/certs/ca-bundle.crt
         metadata_expire: '300'
 
+- name: Execute if host is not GitLab Primary
+  when: is_multi_node_gitlab and not gitlab_is_primary
+  block:
+    - name: Wait until all migrations are processed.
+      become: yes
+      command:
+        cmd: gitlab-rails runner -e production 'puts Gitlab::BackgroundMigration.remaining'
+      register: remaining
+      until: remaining.stdout == "0"
+      retries: 10
+      delay: 10
+      check_mode: no
+
 - name: Install or upgrade GitLab.
   become: yes
   package:

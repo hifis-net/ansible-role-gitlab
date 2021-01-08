@@ -9,4 +9,10 @@ gitlab_version: ""
 gitlab_release: ""
 gitlab_gpg_key_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/gpgkey"
 
+# Flag to identify multi-node GitLab setups
+is_multi_node_gitlab: false
+
+# Flag to identify the primary GitLab server
+gitlab_is_primary: true
+
 ...

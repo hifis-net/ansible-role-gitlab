@@ -25,6 +25,11 @@ Group your changes into these categories:
   ([!9](https://gitlab.com/hifis/ansible/gitlab-base-role/-/merge_requests/9)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
 
+### Fixed
+- Check for background migrations before updating GitLab
+  ([!12](https://gitlab.com/hifis/ansible/gitlab-base-role/-/merge_requests/12)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
+
 ## [0.2.1](https://gitlab.com/hifis/ansible/gitlab-base-role/-/releases/v0.2.1) - 2020-09-10
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.2.0...v0.2.1)
