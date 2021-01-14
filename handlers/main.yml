@@ -26,4 +26,14 @@
   command: gitlab-ctl restart
   register: gitlab_restart
 
+- name: Send SIGHUP to puma worker
+  become: yes
+  command: gitlab-ctl hup puma
+  listen: GitLab has been installed or upgraded
+
+- name: Restart sidekiq
+  become: yes
+  command: gitlab-ctl restart sidekiq
+  listen: GitLab has been installed or upgraded
+
 ...
