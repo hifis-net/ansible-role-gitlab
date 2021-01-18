@@ -326,8 +326,8 @@ mattermost_external_url "https://mattermost.example.com"
 ## Dependencies
 
 This GitLab Role depends on 
-[GitLab Base Role](https://gitlab.com/hifis/ansible/gitlab-base-role.git) 
-which installs the GitLab Omnibus package.
+[hifis.gitlab_base](https://gitlab.com/hifis/ansible/gitlab-base-role.git) 
+role which installs the GitLab Omnibus package.
 
 ## License
 

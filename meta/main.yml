@@ -24,6 +24,6 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies:
-  - role: gitlab_base
+  - role: hifis.gitlab_base
 
 ...
