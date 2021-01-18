@@ -5,7 +5,7 @@
 
 ---
 galaxy_info:
-  role_name: gitlab_base_role
+  role_name: gitlab_base
   author: HIFIS Software Team
   description: Install official GitLab Omnibus package
   company: Helmholtz Association
