@@ -5,18 +5,15 @@ SPDX-FileCopyrightText: 2020 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
 SPDX-License-Identifier: Apache-2.0
 -->
 
-GitLab Role
-===========
+# GitLab Role
 
 Ansible role to configure GitLab Omnibus installation.
 
-Requirements
-------------
+## Requirements
 
 None
 
-Role Variables
---------------
+## Role Variables
 
 ### Mandatory Role Variables with No Defaults
 
@@ -25,7 +22,7 @@ the important role variables described in the next section.
 
 ### Important Role Variables
 
-###### URL of your GitLab Instance
+#### URL of your GitLab Instance
 
 Give the URL of your GitLab instance:
 
@@ -33,7 +30,7 @@ Give the URL of your GitLab instance:
 gitlab_external_url: 'https://gitlab.example.com'
 ```
 
-###### Timezone to Be Used by GitLab
+#### Timezone to Be Used by GitLab
 
 Choose the timezone to be used by GitLab:
 
@@ -41,7 +38,7 @@ Choose the timezone to be used by GitLab:
 gitlab_time_zone: 'Europe/Berlin'
 ```
 
-###### Period of Time to Keep Backups
+#### Period of Time to Keep Backups
 
 Set the period of time (in seconds) to keep your GitLab backups:
 
@@ -51,7 +48,7 @@ gitlab_backup_keep_time: '604800'
 
 ### Optional Role Variables
 
-###### Name of Template for GitLab's Configuration File
+#### Name of Template for GitLab's Configuration File
 
 Specify the name of the template for GitLab's configuration file which 
 will be transformed into GitLab's configuration file:
@@ -60,7 +57,7 @@ will be transformed into GitLab's configuration file:
 gitlab_configuration_file_template: 'gitlab.rb.j2'
 ```
 
-###### Path to GitLab's Configuration File
+#### Path to GitLab's Configuration File
 
 Specify the path of the template for GitLab's configuration file which 
 contains custom configurations of your GitLab instance:
@@ -69,7 +66,7 @@ contains custom configurations of your GitLab instance:
 gitlab_configuration_file_path: '/etc/gitlab/gitlab.rb'
 ```
 
-###### GitLab Theme to Be Used by Default
+#### GitLab Theme to Be Used by Default
 
 Choose the Default Theme to be used for new GitLab users:
 
@@ -77,7 +74,7 @@ Choose the Default Theme to be used for new GitLab users:
 gitlab_default_theme: '2'
 ```
 
-###### Path to GitLab Backups
+#### Path to GitLab Backups
 
 Set the path to the GitLab backups:
 
@@ -85,7 +82,7 @@ Set the path to the GitLab backups:
 gitlab_backup_path: '/var/opt/gitlab/backups'
 ```
 
-###### Port on Which Web-Server Nginx is Listening on
+#### Port on Which Web-Server Nginx is Listening on
 
 Set the port GitLab's web-server Nginx is listening on:
 
@@ -93,7 +90,7 @@ Set the port GitLab's web-server Nginx is listening on:
 nginx_listen_port: '80'
 ```
 
-###### Does Web-Server Nginx accept HTTPS Requests?
+#### Does Web-Server Nginx accept HTTPS Requests?
 
 Choose whether GitLab's web-server Nginx accepts HTTPS requests:
 
@@ -101,7 +98,7 @@ Choose whether GitLab's web-server Nginx accepts HTTPS requests:
 nginx_listen_https: 'false'
 ```
 
-###### Does Web-Server Nginx Redirect HTTP Requests to HTTPS?
+#### Does Web-Server Nginx Redirect HTTP Requests to HTTPS?
 
 Choose whether GitLab's web-server Nginx redirects HTTP requests to HTTPS:
 
@@ -111,7 +108,7 @@ nginx_redirect_http_to_https: 'false'
 
 ### Variables to be Set if External Redis is Used
 
-###### Switch to Use External Redis Instance
+#### Switch to Use External Redis Instance
 
 Set switch to `false` to enable external Redis instance:
 
@@ -119,7 +116,7 @@ Set switch to `false` to enable external Redis instance:
 use_internal_redis: 'false'
 ```
 
-###### Password to Authenticate Redis Services within Cluster
+#### Password to Authenticate Redis Services within Cluster
 
 It is recommended to enable authentication for Redis Master, Redis Replica and 
 Redis Sentinel by providing the respective password:
@@ -130,7 +127,7 @@ redis_password: 'changeme'
 
 _Caution: You have to use your own private and encrypted password here._
 
-###### Reference Name of the Redis Cluster
+#### Reference Name of the Redis Cluster
 
 Choose a name of the Redis Cluster for references:
 
@@ -138,7 +135,7 @@ Choose a name of the Redis Cluster for references:
 redis_cluster_name: 'redis-cluster'
 ```
 
-###### List of IP addresses of Redis Sentinel Servers
+#### List of IP addresses of Redis Sentinel Servers
 
 Add a list of IP addresses of the involved Redis Sentinel servers:
 
@@ -149,7 +146,7 @@ redis_sentinel_ips:
   - '192.168.33.13'
 ```
 
-###### Port on Which Redis Sentinel Servers are Listening
+#### Port on Which Redis Sentinel Servers are Listening
 
 Choose port on which Redis Sentinel servers are listening:
 
@@ -157,7 +154,7 @@ Choose port on which Redis Sentinel servers are listening:
 redis_sentinel_port: '26379'
 ```
 
-###### Whitelist IP Address Range for Monitoring Redis Sentinel Servers
+#### Whitelist IP Address Range for Monitoring Redis Sentinel Servers
 
 Range of GitLab IP addresses that are allowed to monitor Redis Sentinel servers:
 
@@ -167,7 +164,7 @@ gitlab_ip_range: '{{ ansible_default_ipv4.address }}/24'
 
 ### Variables to be Set if External Gitaly is Used
 
-###### Switch to Use External Gitaly Instance
+#### Switch to Use External Gitaly Instance
 
 Set switch to `false` to enable external Gitaly instance:
 
@@ -175,7 +172,7 @@ Set switch to `false` to enable external Gitaly instance:
 use_internal_gitaly: 'false'
 ```
 
-###### Path to GitLab Data Directory
+#### Path to GitLab Data Directory
 
 Specify where to put the GitLab data directory:
 
@@ -183,7 +180,7 @@ Specify where to put the GitLab data directory:
 gitlab_git_data_dir: "/var/opt/gitlab/git-data"
 ```
 
-###### Gitaly Authentication Token
+#### Gitaly Authentication Token
 
 A Gitaly authentication token needs to be given:
 
@@ -193,7 +190,7 @@ gitlab_gitaly_token: 'changeme'
 
 _Caution: You have to use your own private and encrypted password here._
 
-###### GitLab Shell Token
+#### GitLab Shell Token
 
 A GitLab shell token needs to be given:
 
@@ -203,7 +200,7 @@ gitlab_secret_token: 'changeme'
 
 _Caution: You have to use your own private and encrypted password here._
 
-###### Gitaly IP Address
+#### Gitaly IP Address
 
 Specify IP address of the Gitaly instance:
 
@@ -211,7 +208,7 @@ Specify IP address of the Gitaly instance:
 gitaly_instance_ip: '127.0.0.1'
 ```
 
-###### Gitaly Port
+#### Gitaly Port
 
 Specify port of the Gitaly instance:
 
@@ -221,7 +218,7 @@ gitaly_instance_port: '8075'
 
 ### Variables to be Set if External PostgreSQL Database is Used
 
-###### Switch to Use External PostgreSQL Database Instance
+#### Switch to Use External PostgreSQL Database Instance
 
 Set switch to `false` to enable external PostgreSQL Database instance:
 
@@ -229,7 +226,7 @@ Set switch to `false` to enable external PostgreSQL Database instance:
 use_internal_postgresql: 'false'
 ```
 
-###### IP Address of External PostgreSQL Database Instance
+#### IP Address of External PostgreSQL Database Instance
 
 Set IP Address of PostgreSQL Database instance:
 
@@ -237,7 +234,7 @@ Set IP Address of PostgreSQL Database instance:
 postgresql_db_host: '127.0.0.1'
 ```
 
-###### Password for External PostgreSQL Database Instance
+#### Password for External PostgreSQL Database Instance
 
 Set password of PostgreSQL Database instance:
 
@@ -326,19 +323,16 @@ pages_external_url "https://pages.example.com"
 mattermost_external_url "https://mattermost.example.com"
 ```
 
-Dependencies
-------------
+## Dependencies
 
 This GitLab Role depends on 
 [GitLab Base Role](https://gitlab.com/hifis/ansible/gitlab-base-role.git) 
 which installs the GitLab Omnibus package.
 
-License
--------
+## License
 
 [Apache-2.0](LICENSES/Apache-2.0.txt)
 
-Author Information
-------------------
+## Author Information
 
-HIFIS Software Team (please visit [HIFIS Software Webpage](https://software.hifis.net))
+[HIFIS Software Team](https://software.hifis.net)
