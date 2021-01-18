@@ -18,7 +18,11 @@ Group your changes into these categories:
 
 ## Unreleased
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.4.0...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.5.0...master)
+
+## [0.5.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.5.0) - 2021-01-18
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.4.0...v0.5.0)
 
 ### Added
 
