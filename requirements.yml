@@ -5,8 +5,6 @@
 
 ---
 roles:
-  - name: gitlab_base
-    src: git+https://gitlab.com/hifis/ansible/gitlab-base-role.git
-    version: master
+  - name: hifis.gitlab_base
 
 ...
