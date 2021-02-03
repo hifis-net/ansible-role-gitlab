@@ -20,6 +20,11 @@ Group your changes into these categories:
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.3.0...master)
 
+### Fixed
+- Check that command gitlab-rails exists before executing it
+  ([!15](https://gitlab.com/hifis/ansible/gitlab-base-role/-/merge_requests/15)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
+
 ## [0.3.0](https://gitlab.com/hifis/ansible/gitlab-base-role/-/releases/v0.3.0) - 2021-02-02
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.2.1...v0.3.0)
