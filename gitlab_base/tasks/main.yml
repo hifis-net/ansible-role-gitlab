@@ -69,6 +69,11 @@
         sslcacert: /etc/pki/tls/certs/ca-bundle.crt
         metadata_expire: '300'
 
+- name: Does file gitlab-rails exist
+  ansible.builtin.stat:
+    path: "/usr/bin/gitlab-rails"
+  register: file
+
 - name: Wait until all previous background migrations are processed.
   become: yes
   command:
@@ -79,7 +84,10 @@
   delay: 10
   check_mode: no
   changed_when: remaining.rc != 0
-  when: gitlab_is_primary is defined and gitlab_is_primary
+  when:
+    - file.stat.exists
+    - gitlab_is_primary is defined
+    - gitlab_is_primary
 
 - name: Install or upgrade GitLab.
   become: yes
