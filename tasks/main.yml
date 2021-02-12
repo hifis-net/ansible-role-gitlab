@@ -5,6 +5,9 @@
 
 ---
 
+- name: Set OS distribution dependent variables
+  include_vars: "{{ ansible_facts['distribution'] }}.yml"
+
 - name: Install GitLab
   include: install.yml
   become: yes
