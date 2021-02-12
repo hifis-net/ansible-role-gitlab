@@ -5,6 +5,11 @@
 
 ---
 
+gitlab_edition: "gitlab-ee"
+gitlab_version: ""
+gitlab_release: ""
+gitlab_gpg_key_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/gpgkey"
+
 # Specify whether this is the GitLab primary node
 gitlab_is_primary: false
 
