@@ -11,7 +11,7 @@ Ansible role to configure GitLab Omnibus installation.
 
 ## Requirements
 
-None
+None.
 
 ## Role Variables
 
@@ -391,9 +391,7 @@ mattermost_external_url "https://mattermost.example.com"
 
 ## Dependencies
 
-This GitLab Role depends on 
-[hifis.gitlab_base](https://gitlab.com/hifis/ansible/gitlab-base-role.git) 
-role which installs the GitLab Omnibus package.
+None.
 
 ## License
 
