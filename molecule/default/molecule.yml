@@ -12,7 +12,7 @@ driver:
   name: docker
 platforms:
   - name: instance_gitlab
-    image: jrei/systemd-ubuntu:20.04
+    image: jrei/systemd-${MOLECULE_DISTRO:-ubuntu:20.04}
     pre_build_image: true
     privileged: true
     override_command: false
@@ -31,6 +31,8 @@ provisioner:
     host_vars:
       instance_gitlab:
         gitlab_edition: "gitlab-ee"
+#        gitlab_version: "13.2.1"
+#        gitlab_release: "ce.0.el8"
 verifier:
   name: ansible
 

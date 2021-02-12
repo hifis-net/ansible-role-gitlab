@@ -7,13 +7,27 @@
 - name: Prepare
   hosts: all
   tasks:
-    - name: Install dependencies
-      apt:
-        name:
-          - sudo      # for `become` privilege escalation
-          - iproute2  # for gathering network facts
-        state: present
-        update_cache: yes
+    - when:
+        - ansible_os_family == 'RedHat'
+        - ansible_distribution_major_version | int >= 8
+      block:
+        - name: Install missing dependencies
+          dnf:
+            name:
+              - sudo
+            state: present
+            update_cache: yes
+
+    - when: ansible_os_family == 'Debian'
+      block:
+        - name: Install missing dependencies
+          apt:
+            name:
+              - sudo      # for `become` privilege escalation
+              - iproute2  # for gathering network facts
+            state: present
+            update_cache: yes
+
     # Provisioning freezes and GitLab "waits for redis server socket" on task "GitLab reconfigure" if file ".dockerenv" exists!
     - name: Remove file so GitLab Omnibus does not wait for redis server socket on task GitLab reconfigure.
       file:
