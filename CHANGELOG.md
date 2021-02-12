@@ -25,6 +25,10 @@ Group your changes into these categories:
 - Automate role import into Ansible Galaxy via GitHub Actions
   ([!34](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/34)
   by [Normo](https://gitlab.com/Normo)).
+- Merge gitlab_base into gitlab role
+  ([!32](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/32)
+  by [Normo](https://gitlab.com/Normo)).
+
 
 ## [0.5.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.5.0) - 2021-01-18
 
