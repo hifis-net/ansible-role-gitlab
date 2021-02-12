@@ -85,6 +85,7 @@ gitlab_dependencies:
   - gnupg
   - openssh-server
   - openssl
+  - tzdata
 ```
 
 #### URL of your GitLab Instance
