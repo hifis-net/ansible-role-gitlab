@@ -20,6 +20,12 @@ Group your changes into these categories:
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.5.0...master)
 
+### Added
+
+- Automate role import into Ansible Galaxy via GitHub Actions
+  ([!34](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/34)
+  by [Normo](https://gitlab.com/Normo)).
+
 ## [0.5.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.5.0) - 2021-01-18
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.4.0...v0.5.0)
