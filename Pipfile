@@ -9,13 +9,13 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-yamllint = "*"
-ansible-lint = "*"
-molecule = {extras = ["docker"], version = "*"}
-reuse = "*"
+yamllint = "~=1.26.0"
+ansible-lint = "~=5.0.1"
+molecule = {extras = ["docker"], version = "~=3.2.3"}
+reuse = "~=0.12.1"
 
 [packages]
-ansible = "~=2.10.0"
+ansible = "~=2.10.7"
 
 [requires]
-python_version = "3.8"
+python_version = "3"
