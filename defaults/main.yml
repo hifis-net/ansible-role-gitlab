@@ -5,12 +5,14 @@
 
 ---
 
+gitlab_edition: "gitlab-ee"
+gitlab_version: ""
+gitlab_release: ""
+gitlab_gpg_key_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/gpgkey"
+
 # Specify whether this is the GitLab primary node
 gitlab_is_primary: false
 
-# GitLab dependencies to install
-gitlab_dependencies_only:
-  - "tzdata"
 # Name ot the GitLab configuration template
 gitlab_configuration_file_template: "gitlab.rb.j2"
 # Path to the GitLab configuration file

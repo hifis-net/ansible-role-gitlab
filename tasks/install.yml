@@ -1,0 +1,99 @@
+# SPDX-FileCopyrightText: 2020 Helmholtz Centre for Environmental Research (UFZ)
+# SPDX-FileCopyrightText: 2020 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+
+- name: Install GitLab Dependencies
+  become: yes
+  package:
+    name: "{{ gitlab_dependencies }}"
+    state: present
+
+- when: ansible_os_family == 'Debian'
+  block:
+    - name: Install APT GPG key
+      apt_key:
+        url: "{{ gitlab_gpg_key_url }}"
+        state: present
+
+    - name: Add GitLab APT repository
+      apt_repository:
+        repo: "deb {{ gitlab_repo_url }} {{ ansible_distribution_release }} main"
+        state: present
+        filename: "gitlab_{{ gitlab_edition }}"
+        mode: '0644'
+
+    - name: Add GitLab source APT repository
+      apt_repository:
+        repo: "deb-src {{ gitlab_repo_url }} {{ ansible_distribution_release }} main"
+        state: present
+        filename: "gitlab_{{ gitlab_edition }}"
+        mode: '0644'
+
+- when: ansible_os_family == 'RedHat'
+  block:
+    - name: Add GitLab yum repository
+      yum_repository:
+        name: "gitlab_{{ gitlab_edition }}"
+        description: "GitLab yum repo"
+        baseurl: "{{ gitlab_repo_url }}"
+        state: present
+        repo_gpgcheck: yes
+        gpgcheck: yes
+        enabled: yes
+        gpgkey:
+          - "{{ gitlab_gpg_key_url }}"
+          - "{{ gitlab_gpg_key_url }}/gitlab-{{ gitlab_edition }}-3D645A26AB9FBD22.pub.gpg"
+        sslverify: yes
+        sslcacert: /etc/pki/tls/certs/ca-bundle.crt
+        metadata_expire: '300'
+
+    - name: Add GitLab source yum repository
+      yum_repository:
+        name: "gitlab_{{ gitlab_edition }}-source"
+        description: "GitLab source yum repo"
+        baseurl: "{{ gitlab_source_repo_url }}"
+        state: present
+        repo_gpgcheck: yes
+        gpgcheck: yes
+        enabled: yes
+        gpgkey:
+          - "{{ gitlab_gpg_key_url }}"
+          - "{{ gitlab_gpg_key_url }}/gitlab-{{ gitlab_edition }}-3D645A26AB9FBD22.pub.gpg"
+        sslverify: yes
+        sslcacert: /etc/pki/tls/certs/ca-bundle.crt
+        metadata_expire: '300'
+
+- name: Ensure gitlab-rails file exist
+  ansible.builtin.stat:
+    path: "/usr/bin/gitlab-rails"
+  register: file
+
+- name: Wait until all previous background migrations are processed.
+  become: yes
+  command:
+    cmd: gitlab-rails runner -e production 'puts Gitlab::BackgroundMigration.remaining'
+  register: remaining
+  until: remaining.stdout == "0"
+  retries: 10
+  delay: 10
+  check_mode: no
+  changed_when: remaining.rc != 0
+  when:
+    - file.stat.exists
+    - file.stat.executable
+    - gitlab_is_primary is defined
+    - gitlab_is_primary
+
+- name: Install or upgrade GitLab.
+  become: yes
+  package:
+    name: "{{ gitlab_package_name }}"
+    state: present
+    update_cache: yes
+  register: gitlab_install_output
+  notify: GitLab has been installed or upgraded
+
+...

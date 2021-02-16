@@ -11,7 +11,7 @@ Ansible role to configure GitLab Omnibus installation.
 
 ## Requirements
 
-None
+None.
 
 ## Role Variables
 
@@ -21,6 +21,72 @@ There are no role variables without defaults, but you should carefully choose
 the important role variables described in the next section.
 
 ### Important Role Variables
+
+#### GitLab Edition
+
+The GitLab edition to install. Please use either `gitlab-ce` for Community
+Edition or `gitlab-ee` for Enterprise Edition.
+
+```yaml
+gitlab_edition: "gitlab-ee"
+```
+
+#### GitLab Version and Release
+
+Set a specific GitLab version to install. Please ensure that you also specify
+the desired release. You can find the available releases
+[here](https://packages.gitlab.com/gitlab).
+
+```yaml
+gitlab_version: "13.2.1"
+gitlab_release: "ce.0.el8"
+```
+
+#### GPG Key URL
+
+URL to the GPG key that was used to sign the packages.
+
+```yaml
+gitlab_gpg_key_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/gpgkey"
+```
+
+#### Package Repository URL
+
+URL to the package repository based on the operating system.
+
+```yaml
+gitlab_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/ubuntu/"
+```
+
+#### Source Package Repository URL
+
+URL to the source package repository (*CentOS* only).
+
+```yaml
+gitlab_source_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/el/{{ ansible_distribution_major_version }}/SRPMS"
+```
+
+#### Package Name
+
+Name of the GitLab package to install.
+
+```yaml
+gitlab_package_name: "{{ gitlab_edition + '=' + gitlab_version + '-' + gitlab_release if gitlab_version and gitlab_release else gitlab_edition }}"
+```
+
+#### Package Dependencies
+
+List of depend packages required by GitLab based on the operating system.
+
+```yaml
+gitlab_dependencies:
+  - apt-transport-https
+  - curl
+  - gnupg
+  - openssh-server
+  - openssl
+  - tzdata
+```
 
 #### URL of your GitLab Instance
 
@@ -325,9 +391,7 @@ mattermost_external_url "https://mattermost.example.com"
 
 ## Dependencies
 
-This GitLab Role depends on 
-[hifis.gitlab_base](https://gitlab.com/hifis/ansible/gitlab-base-role.git) 
-role which installs the GitLab Omnibus package.
+None.
 
 ## License
 

@@ -5,11 +5,12 @@
 
 ---
 
-- name: Install GitLab Dependencies.
+- name: Set OS distribution dependent variables
+  include_vars: "{{ ansible_facts['distribution'] }}.yml"
+
+- name: Install GitLab
+  include: install.yml
   become: yes
-  package:
-    name: "{{ gitlab_dependencies_only }}"
-    state: present
 
 - name: Copy gitlab-secrets.json
   copy:

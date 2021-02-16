@@ -5,6 +5,11 @@
 
 ---
 
+- name: GitLab has been installed or upgraded
+  become: yes
+  set_fact:
+    gitlab_is_upgraded: true
+
 - name: Reconfigure Primary GitLab
   become: yes
   command: gitlab-ctl reconfigure
