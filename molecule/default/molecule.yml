@@ -10,7 +10,7 @@ driver:
   name: docker
 platforms:
   - name: instance_gitlab
-    image: jrei/systemd-${MOLECULE_DISTRO:-ubuntu:20.04}
+    image: geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu20.04}-ansible:latest
     pre_build_image: true
     privileged: true
     override_command: false

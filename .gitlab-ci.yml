@@ -45,10 +45,10 @@ test:
   parallel:
     matrix:
       - MOLECULE_DISTRO:
-          - centos:7
-          - centos:8
-          - ubuntu:18.04
-          - ubuntu:20.04
+          - centos7
+          - centos8
+          - ubuntu1804
+          - ubuntu2004
 
 .moleculetest:
   stage: test
