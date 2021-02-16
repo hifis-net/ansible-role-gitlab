@@ -23,10 +23,8 @@ variables:
 .before_script_template: &before_script
   # Ansible refuses to read from a world-writeable folder
   - chmod 0750 $CI_PROJECT_DIR
-  # Install tools.
   - pip install -U pip
   - pip install --ignore-installed pipenv
-  # Install project dependencies.
   - pipenv install --dev
 
 validate:
@@ -36,14 +34,23 @@ validate:
   before_script:
     - *before_script
   script:
-    # Run Molecule linter.
     - pipenv run molecule lint
   cache:
     key: pipenv
     paths:
       - .pipenv
 
-molecule:
+test:
+  extends: .moleculetest
+  parallel:
+    matrix:
+      - MOLECULE_DISTRO:
+          - centos:7
+          - centos:8
+          - ubuntu:18.04
+          - ubuntu:20.04
+
+.moleculetest:
   stage: test
   image: docker:latest
   variables: *cache_variables
@@ -57,12 +64,10 @@ molecule:
       python3-dev py3-pip gcc git curl build-base
       autoconf automake py3-cryptography linux-headers
       musl-dev libffi-dev openssl-dev openssh
-    # Output version string of tools used.
     - docker info
     - python3 --version
     - *before_script
   script:
-    # Run Molecule tests.
     - pipenv run molecule test
   cache:
     key: pipenv-alpine

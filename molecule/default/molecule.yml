@@ -31,7 +31,7 @@ provisioner:
     host_vars:
       instance_gitlab:
         gitlab_edition: "gitlab-ee"
-#        gitlab_version: "13.2.1"
+#        gitlab_version: "13.8.4"
 #        gitlab_release: "ce.0.el8"
 verifier:
   name: ansible
