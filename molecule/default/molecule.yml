@@ -6,8 +6,6 @@
 ---
 dependency:
   name: galaxy
-  options:
-    role-file: requirements.yml
 driver:
   name: docker
 platforms:
@@ -30,7 +28,7 @@ provisioner:
   inventory:
     host_vars:
       instance_gitlab:
-        gitlab_edition: "gitlab-ee"
+        gitlab_edition: "gitlab-ce"
 #        gitlab_version: "13.8.4"
 #        gitlab_release: "ce.0.el8"
 verifier:
