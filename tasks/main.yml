@@ -8,6 +8,16 @@
 - name: Set OS distribution dependent variables
   include_vars: "{{ ansible_facts['distribution'] }}.yml"
 
+- name: Check if a previous reconfigure had failed
+  ansible.builtin.stat:
+    path: /etc/gitlab/reconfigure_failed
+  register: reconfigure_failed
+
+- name: Reconfigure GitLab
+  include: reconfigure.yml
+  become: yes
+  when: reconfigure_failed.stat.exists
+
 - name: Install GitLab
   include: install.yml
   become: yes
