@@ -12,5 +12,8 @@
   include: install.yml
   become: yes
 
+- name: Configure GitLab
+  include: configure.yml
+  become: yes
 
 ...
