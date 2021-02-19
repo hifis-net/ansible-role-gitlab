@@ -4,21 +4,29 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
+- name: Ensure gitlab-ctl file exists
+  ansible.builtin.stat:
+    path: /usr/bin/gitlab-ctl
+  register: gitlab_ctl
 
 - name: Reconfigure Primary GitLab
   become: yes
   ansible.builtin.command: gitlab-ctl reconfigure
   environment:
     SKIP_POST_DEPLOYMENT_MIGRATIONS: true
-  when: gitlab_is_primary
+  when:
+    - gitlab_is_primary
+    - gitlab_ctl.stat.exists
 
 - name: Reconfigure Non Primary GitLab
   become: yes
   ansible.builtin.command: gitlab-ctl reconfigure
-  when: not gitlab_is_primary
+  when:
+    - not gitlab_is_primary
+    - gitlab_ctl.stat.exists
 
 - name: Remove file that indicates a failed reconfigure
-  file:
+  ansible.builtin.file:
     path: /etc/gitlab/reconfigure_failed
     state: absent
 
