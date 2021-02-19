@@ -110,8 +110,8 @@
 
     - name: Create file to detect a failed reconfigure
       copy:
-        content: "{{ ansible_managed }}"
-        path: /etc/gitlab/reconfigure_failed
+        content: "This file is managed by Ansible."
+        dest: /etc/gitlab/reconfigure_failed
         force: no
         owner: root
         group: root
