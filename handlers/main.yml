@@ -13,7 +13,7 @@
 - name: Reconfigure Primary GitLab
   become: yes
   ansible.builtin.shell:
-    cmd: gitlab-ctl reconfigure || touch /etc/gitlab/reconfigure_failed
+    cmd: gitlab-ctl reconfigure || (touch /etc/gitlab/reconfigure_failed && /bin/false)
   register: gitlab_reconfigure
   environment:
     SKIP_POST_DEPLOYMENT_MIGRATIONS: true
@@ -23,7 +23,7 @@
 - name: Reconfigure Non Primary GitLab
   become: yes
   ansible.builtin.shell:
-    cmd: gitlab-ctl reconfigure || touch /etc/gitlab/reconfigure_failed
+    cmd: gitlab-ctl reconfigure || (touch /etc/gitlab/reconfigure_failed && /bin/false)
   register: gitlab_reconfigure
   listen: GitLab has been installed or upgraded
   when: not gitlab_is_primary
