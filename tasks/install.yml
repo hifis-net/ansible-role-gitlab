@@ -87,13 +87,34 @@
     - gitlab_is_primary is defined
     - gitlab_is_primary
 
-- name: Install or upgrade GitLab.
-  become: yes
-  package:
-    name: "{{ gitlab_package_name }}"
-    state: present
-    update_cache: yes
-  register: gitlab_install_output
-  notify: GitLab has been installed or upgraded
+- block:
+
+    - name: Install or upgrade GitLab.
+      become: yes
+      package:
+        name: "{{ gitlab_package_name }}"
+        state: present
+        update_cache: yes
+      register: gitlab_install_output
+      notify: GitLab has been installed or upgraded
+
+  rescue:
+
+    - name: Ensure GitLab directory exists
+      file:
+        path: /etc/gitlab
+        state: directory
+        owner: root
+        group: root
+        mode: '0775'
+
+    - name: Create file to detect a failed reconfigure
+      copy:
+        content: "This file is managed by Ansible."
+        dest: /etc/gitlab/reconfigure_failed
+        force: no
+        owner: root
+        group: root
+        mode: '0644'
 
 ...
