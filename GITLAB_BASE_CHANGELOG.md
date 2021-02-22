@@ -16,9 +16,9 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
-## Unreleased
+## [0.3.1](https://gitlab.com/hifis/ansible/gitlab-base-role/-/releases/v0.3.1) - 2021-02-22
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.3.0...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-base-role/-/compare/v0.3.0...v0.3.1)
 
 ### Fixed
 - Check that command gitlab-rails exists before executing it
