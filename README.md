@@ -5,20 +5,21 @@ SPDX-FileCopyrightText: 2020 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
 SPDX-License-Identifier: Apache-2.0
 -->
 
-# GitLab Role
+# GitLab Ansible Role
 
-Ansible role to configure GitLab Omnibus installation.
+A role to install and configure official GitLab Omnibus package.
+
+Currently [supported platforms](meta/main.yml) are:
+- CentOS 7
+- CentOS 8
+- Ubuntu 18.04 LTS (Bionic Beaver)
+- Ubuntu 20.04 LTS (Focal Fossa)
 
 ## Requirements
 
 None.
 
 ## Role Variables
-
-### Mandatory Role Variables with No Defaults
-
-There are no role variables without defaults, but you should carefully choose
-the important role variables described in the next section.
 
 ### Important Role Variables
 
@@ -38,8 +39,13 @@ the desired release. You can find the available releases
 [here](https://packages.gitlab.com/gitlab).
 
 ```yaml
-gitlab_version: "13.2.1"
+gitlab_version: "13.9.1"
+
+# GitLab Release for CentOS 8
 gitlab_release: "ce.0.el8"
+
+# GitLab Release for Ubuntu 20.04
+gitlab_release: "ce.0"
 ```
 
 #### GPG Key URL
