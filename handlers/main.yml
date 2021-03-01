@@ -7,7 +7,7 @@
 
 - name: GitLab has been installed or upgraded
   become: yes
-  set_fact:
+  ansible.builtin.set_fact:
     gitlab_is_upgraded: true
 
 - name: Reconfigure Primary GitLab
@@ -30,17 +30,17 @@
 
 - name: Restart GitLab
   become: yes
-  command: gitlab-ctl restart
+  ansible.builtin.command: gitlab-ctl restart
   register: gitlab_restart
 
 - name: Send SIGHUP to puma worker
   become: yes
-  command: gitlab-ctl hup puma
+  ansible.builtin.command: gitlab-ctl hup puma
   listen: GitLab has been installed or upgraded
 
 - name: Restart sidekiq
   become: yes
-  command: gitlab-ctl restart sidekiq
+  ansible.builtin.command: gitlab-ctl restart sidekiq
   listen: GitLab has been installed or upgraded
 
 ...

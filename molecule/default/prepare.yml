@@ -12,7 +12,7 @@
         - ansible_distribution_major_version | int >= 7
       block:
         - name: Install missing dependencies
-          yum:
+          ansible.builtin.yum:
             name:
               - sudo
               - iproute
@@ -22,7 +22,7 @@
     - when: ansible_os_family == 'Debian'
       block:
         - name: Install missing dependencies
-          apt:
+          ansible.builtin.apt:
             name:
               - sudo      # for `become` privilege escalation
               - iproute2  # for gathering network facts
@@ -31,7 +31,7 @@
 
     # Provisioning freezes and GitLab "waits for redis server socket" on task "GitLab reconfigure" if file ".dockerenv" exists!
     - name: Remove file so GitLab Omnibus does not wait for redis server socket on task GitLab reconfigure.
-      file:
+      ansible.builtin.file:
         path: /.dockerenv
         state: absent
 

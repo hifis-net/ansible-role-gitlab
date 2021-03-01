@@ -6,7 +6,7 @@
 ---
 
 - name: Copy gitlab-secrets.json
-  copy:
+  ansible.builtin.copy:
     src: "{{ gitlab_secrets_file }}"
     dest: /etc/gitlab/gitlab-secrets.json
     owner: root
@@ -20,7 +20,7 @@
 
 - name: Copy GitLab Configuration File.
   become: yes
-  template:
+  ansible.builtin.template:
     src: "{{ gitlab_configuration_file_template }}"
     dest: "{{ gitlab_configuration_file_path }}"
     owner: root
@@ -31,7 +31,7 @@
     - Reconfigure Non Primary GitLab
 
 - name: Create file to prevent Gitlab to restart before migrations
-  copy:
+  ansible.builtin.copy:
     content: ""
     dest: /etc/gitlab/skip-auto-reconfigure
     force: no
@@ -41,7 +41,7 @@
   when: gitlab_is_primary
 
 - name: Create file to prevent Gitlab to backup database
-  copy:
+  ansible.builtin.copy:
     content: ""
     dest: /etc/gitlab/skip-auto-backup
     force: no
