@@ -7,26 +7,26 @@
 
 - name: Install GitLab Dependencies
   become: yes
-  package:
+  ansible.builtin.package:
     name: "{{ gitlab_dependencies }}"
     state: present
 
 - when: ansible_os_family == 'Debian'
   block:
     - name: Install APT GPG key
-      apt_key:
+      ansible.builtin.apt_key:
         url: "{{ gitlab_gpg_key_url }}"
         state: present
 
     - name: Add GitLab APT repository
-      apt_repository:
+      ansible.builtin.apt_repository:
         repo: "deb {{ gitlab_repo_url }} {{ ansible_distribution_release }} main"
         state: present
         filename: "gitlab_{{ gitlab_edition }}"
         mode: '0644'
 
     - name: Add GitLab source APT repository
-      apt_repository:
+      ansible.builtin.apt_repository:
         repo: "deb-src {{ gitlab_repo_url }} {{ ansible_distribution_release }} main"
         state: present
         filename: "gitlab_{{ gitlab_edition }}"
@@ -35,7 +35,7 @@
 - when: ansible_os_family == 'RedHat'
   block:
     - name: Add GitLab yum repository
-      yum_repository:
+      ansible.builtin.yum_repository:
         name: "gitlab_{{ gitlab_edition }}"
         description: "GitLab yum repo"
         baseurl: "{{ gitlab_repo_url }}"
@@ -51,7 +51,7 @@
         metadata_expire: '300'
 
     - name: Add GitLab source yum repository
-      yum_repository:
+      ansible.builtin.yum_repository:
         name: "gitlab_{{ gitlab_edition }}-source"
         description: "GitLab source yum repo"
         baseurl: "{{ gitlab_source_repo_url }}"
@@ -73,7 +73,7 @@
 
 - name: Wait until all previous background migrations are processed.
   become: yes
-  command:
+  ansible.builtin.command:
     cmd: gitlab-rails runner -e production 'puts Gitlab::BackgroundMigration.remaining'
   register: remaining
   until: remaining.stdout == "0"
@@ -91,7 +91,7 @@
 
     - name: Install or upgrade GitLab.
       become: yes
-      package:
+      ansible.builtin.package:
         name: "{{ gitlab_package_name }}"
         state: present
         update_cache: yes
@@ -101,7 +101,7 @@
   rescue:
 
     - name: Ensure GitLab directory exists
-      file:
+      ansible.builtin.file:
         path: /etc/gitlab
         state: directory
         owner: root
@@ -109,7 +109,7 @@
         mode: '0775'
 
     - name: Create file to detect a failed reconfigure
-      copy:
+      ansible.builtin.copy:
         content: "This file is managed by Ansible."
         dest: /etc/gitlab/reconfigure_failed
         force: no
