@@ -18,7 +18,11 @@ Group your changes into these categories:
 
 ## Unreleased
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.5.0...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.0...master)
+
+## [1.0.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.0.0) - 2021-03-02
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.5.0...v1.0.0)
 
 ### Added
 
@@ -27,6 +31,9 @@ Group your changes into these categories:
   by [Normo](https://gitlab.com/Normo)).
 - Merge gitlab_base into gitlab role
   ([!32](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/32)
+  by [Normo](https://gitlab.com/Normo)).
+- Reconfigure GitLab if a previous reconfiguration had failed
+  ([!35](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/35)
   by [Normo](https://gitlab.com/Normo)).
 
 ### Changed
