@@ -34,6 +34,9 @@ Group your changes into these categories:
 - Upgrade project dependencies
   ([!33](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/33)
   by [Normo](https://gitlab.com/Normo)).
+- Use fully qualified collection names
+  ([!36](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/36)
+  by [Normo](https://gitlab.com/Normo)).
 
 ## [0.5.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v0.5.0) - 2021-01-18
 
