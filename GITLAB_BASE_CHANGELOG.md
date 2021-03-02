@@ -5,16 +5,11 @@ SPDX-FileCopyrightText: 2020 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
 SPDX-License-Identifier: Apache-2.0
 -->
 
-# Changelog
+# Changelog gitlab-base role
 
-All notable changes to this project will be documented in this file.
+**Attention:** The gitlab-base role has been migrated to this gitlab role.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-Group your changes into these categories:
-
-`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
+Please find information on any changes made in this [CHANGELOG](CHANGELOG.md) file.
 
 ## [0.3.1](https://gitlab.com/hifis/ansible/gitlab-base-role/-/releases/v0.3.1) - 2021-02-22
 
