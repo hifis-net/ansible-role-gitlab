@@ -117,4 +117,7 @@
         group: root
         mode: '0644'
 
+    - name: Stop role execution due to failed package installation
+      ansible.builtin.fail:
+
 ...
