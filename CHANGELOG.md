@@ -20,6 +20,11 @@ Group your changes into these categories:
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.0...master)
 
+### Fixed
+- Stop role execution after failed ``apt`` package installation
+  ([!39](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/39)
+  by [Normo](https://gitlab.com/Normo)).
+
 ## [1.0.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.0.0) - 2021-03-03
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.5.0...v1.0.0)
