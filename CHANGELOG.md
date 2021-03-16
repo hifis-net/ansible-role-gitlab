@@ -16,9 +16,9 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
-## Unreleased
+## [1.0.1](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.0.1) - 2021-03-16
 
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.0...master)
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.0...v1.0.1)
 
 ### Fixed
 - Stop role execution after failed ``apt`` package installation
