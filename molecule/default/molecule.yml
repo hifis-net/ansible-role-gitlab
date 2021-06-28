@@ -23,6 +23,7 @@ provisioner:
   name: ansible
   playbooks:
     prepare: prepare.yml
+    check: converge.yml
     converge: converge.yml
     verify: verify.yml
   inventory:
@@ -33,5 +34,21 @@ provisioner:
 #        gitlab_release: "ce.0.el8"
 verifier:
   name: ansible
+scenario:
+  name: default
+  test_sequence:
+    - lint
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - check
+    - converge
+    - idempotence
+    - check
+    - side_effect
+    - verify
+    - destroy
 
 ...
