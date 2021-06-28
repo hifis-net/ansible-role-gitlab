@@ -16,6 +16,13 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
+## Unreleased
+
+### Fixed
+- Allow initial dry-runs without causing role deployments to fail
+  ([!41](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/41)
+  by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
+
 ## [1.0.1](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.0.1) - 2021-03-16
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.0...v1.0.1)
