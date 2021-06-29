@@ -17,6 +17,7 @@
       ansible.builtin.apt_key:
         url: "{{ gitlab_gpg_key_url }}"
         state: present
+      when: not is_initial_dryrun
 
     - name: Add GitLab APT repository
       ansible.builtin.apt_repository:
@@ -97,6 +98,7 @@
         update_cache: yes
       register: gitlab_install_output
       notify: GitLab has been installed or upgraded
+      when: not is_initial_dryrun
 
   rescue:
 
