@@ -16,6 +16,15 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
+## Unreleased
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.2...main)
+
+### Added
+- Add galaxy namespace to role metadata
+  ([!44](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/44))
+  by [Normo](https://gitlab.com/Normo)).
+
 ## [1.0.2](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.0.2) - 2021-06-29
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.1...v1.0.2)
