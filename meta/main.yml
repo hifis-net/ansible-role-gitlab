@@ -3,8 +3,10 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+---
 galaxy_info:
   role_name: gitlab
+  namespace: hifis
   author: HIFIS Software Team
   description: Install and configure official GitLab Omnibus package
   company: Helmholtz Association
