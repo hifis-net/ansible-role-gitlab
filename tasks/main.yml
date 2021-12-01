@@ -23,16 +23,16 @@
   register: reconfigure_failed
 
 - name: Reconfigure GitLab
-  ansible.builtin.include: reconfigure.yml
+  ansible.builtin.import_tasks: reconfigure.yml
   become: yes
   when: reconfigure_failed.stat.exists
 
 - name: Install GitLab
-  ansible.builtin.include: install.yml
+  ansible.builtin.import_tasks: install.yml
   become: yes
 
 - name: Configure GitLab
-  ansible.builtin.include: configure.yml
+  ansible.builtin.import_tasks: configure.yml
   become: yes
 
 ...
