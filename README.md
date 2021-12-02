@@ -178,6 +178,15 @@ Choose whether GitLab's web-server Nginx redirects HTTP requests to HTTPS:
 nginx_redirect_http_to_https: 'false'
 ```
 
+#### Mattermost only use case
+
+This role can be used to run Mattermost without deploying GitLab. In this
+scenario services like _sidekiq_ or _puma_ are not required. Set to `true` to
+prevent the role from reloading those services:
+```yaml
+gitlab_mattermost_only_context: 'false'
+```
+
 ### Variables to be Set if External Redis is Used
 
 #### Switch to Use External Redis Instance
