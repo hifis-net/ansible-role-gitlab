@@ -32,6 +32,9 @@ Group your changes into these categories:
 - Bump Python dependencies to the latest versions
   ([!42](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/42)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
+- Prevent restarting puma and sidekiq services in Mattermost only context
+  ([!46](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/46)
+  by [Normo](https://gitlab.com/Normo)).
 
 ## [1.0.2](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.0.2) - 2021-06-29
 
