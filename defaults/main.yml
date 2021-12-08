@@ -82,7 +82,7 @@ gitlab_registry_enable: "false"
 gitlab_registry_external_url: "http://localhost:5005"
 
 # Mattermost configuration
-# Wheter GitLab Omnibus is used to run Mattermost only without GitLab
+# Whether GitLab Omnibus is used to run Mattermost only without GitLab
 gitlab_mattermost_only_context: "false"
 
 ...

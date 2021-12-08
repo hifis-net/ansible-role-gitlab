@@ -183,6 +183,7 @@ nginx_redirect_http_to_https: 'false'
 This role can be used to run Mattermost without deploying GitLab. In this
 scenario services like _sidekiq_ or _puma_ are not required. Set to `true` to
 prevent the role from reloading those services:
+
 ```yaml
 gitlab_mattermost_only_context: 'false'
 ```
