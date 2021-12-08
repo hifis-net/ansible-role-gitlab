@@ -94,7 +94,7 @@
       become: yes
       ansible.builtin.package:
         name: "{{ gitlab_package_name }}"
-        state: present
+        state: "{{ 'present' if gitlab_version | length > 0 else 'latest' }}"
         update_cache: yes
       register: gitlab_install_output
       notify: GitLab has been installed or upgraded

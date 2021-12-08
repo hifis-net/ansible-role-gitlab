@@ -39,14 +39,17 @@ the desired release. You can find the available releases
 [here](https://packages.gitlab.com/gitlab).
 
 ```yaml
-gitlab_version: "13.9.1"
+gitlab_version: "14.5.2"
 
-# GitLab Release for CentOS 8
+# GitLab Release for RHEL/CentOS 8
 gitlab_release: "ce.0.el8"
 
 # GitLab Release for Ubuntu 20.04
 gitlab_release: "ce.0"
 ```
+
+**Please note:** If no GitLab version is specified the role will always install
+the latest available GitLab package.
 
 #### GPG Key URL
 

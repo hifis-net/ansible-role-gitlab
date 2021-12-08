@@ -35,6 +35,9 @@ Group your changes into these categories:
 - Prevent restarting puma and sidekiq services in Mattermost only context
   ([!46](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/46)
   by [Normo](https://gitlab.com/Normo)).
+- Install latest available GitLab version if no version has been pinned
+  ([!47](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/47)
+  by [Normo](https://gitlab.com/Normo)).
 
 ## [1.0.2](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.0.2) - 2021-06-29
 
