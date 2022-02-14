@@ -10,12 +10,12 @@ verify_ssl = true
 
 [dev-packages]
 yamllint = "~=1.26.3"
-ansible-lint = "~=5.3.0"
-molecule = {extras = ["docker"], version = "~=3.5.2"}
-reuse = "~=0.13.0"
+ansible-lint = "~=5.4.0"
+molecule = {extras = ["docker"], version = "~=3.6.0"}
+reuse = "~=0.14.0"
 
 [packages]
-ansible = "~=5.0.0"
+ansible = "~=5.3.0"
 
 [requires]
-python_version = "3"
+python_version = "3.9"
