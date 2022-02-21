@@ -16,16 +16,28 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
+## Unreleased
+
+[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.1.0...main)
+
+### Changed
+
+- Update Python dependencies and use Python 3.9 in GitLab CI
+  ([!49](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/49)
+  by [tobiashuste](https://gitlab.com/tobiashuste)).
+
 ## [1.1.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.1.0) - 2021-12-08
 
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.2...v1.1.0)
 
 ### Added
+
 - Add galaxy namespace to role metadata
   ([!44](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/44)
   by [Normo](https://gitlab.com/Normo)).
 
 ### Changed
+
 - Replace include with import_tasks
   ([!45](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/45)
   by [Normo](https://gitlab.com/Normo)).
@@ -44,6 +56,7 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.1...v1.0.2)
 
 ### Fixed
+
 - Allow initial dry-runs without causing role deployments to fail
   ([!41](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/41)
   by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
@@ -53,6 +66,7 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.0.0...v1.0.1)
 
 ### Fixed
+
 - Stop role execution after failed ``apt`` package installation
   ([!39](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/39)
   by [Normo](https://gitlab.com/Normo)).
@@ -97,11 +111,13 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.4...v0.4.0)
 
 ### Added
+
 - Supply generic way to configure GitLab via Ansible variables that are translated to Ruby function calls
   ([!27](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/27)
   by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
 
 ### Changed
+
 - Improve and speed up the CI pipeline
   ([!24](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/24)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
@@ -127,6 +143,7 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.2...v0.3.3)
 
 ### Fixed
+
 - Rename role 'gitlab_base_role' to 'gitlab_base' in meta and requirements files
   ([!20](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/20)
   by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
@@ -136,6 +153,7 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.1...v0.3.2)
 
 ### Fixed
+
 - Handler 'Reconfigure GitLab' needs to listens to handler 'GitLab has been installed or upgraded'
   ([!19](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/19)
   by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
@@ -145,6 +163,7 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.3.0...v0.3.1)
 
 ### Fixed
+
 - Fix reconfigure handler not run when GitLab package is upgraded
   ([!17](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/17)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
@@ -154,6 +173,7 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.2.0...v0.3.0)
 
 ### Added
+
 - Trigger GitLab reconfigure if GitLab package has been installed or upgraded
   ([!16](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/16)
   by [christian.hueser.hzdr](https://gitlab.com/christian.hueser.hzdr)).
@@ -163,6 +183,7 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.1.1...v0.2.0)
 
 ### Added
+
 - Implement a basic configuration for the container registry
   ([!14](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/14)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
@@ -172,6 +193,7 @@ Group your changes into these categories:
 [List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v0.1.0...v0.1.1)
 
 ### Fixed
+
 - Fix creation of skip-auto-reconfigure file
   ([!12](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/12)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
