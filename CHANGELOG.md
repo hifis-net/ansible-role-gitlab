@@ -25,6 +25,9 @@ Group your changes into these categories:
 - Update Python dependencies and use Python 3.9 in GitLab CI
   ([!49](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/49)
   by [tobiashuste](https://gitlab.com/tobiashuste)).
+- Add role variable to specify apt key identifier
+  ([!50](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/50)
+  by [Normo](https://gitlab.com/Normo)).
 
 ## [1.1.0](https://gitlab.com/hifis/ansible/gitlab-role/-/releases/v1.1.0) - 2021-12-08
 
