@@ -59,6 +59,14 @@ URL to the GPG key that was used to sign the packages.
 gitlab_gpg_key_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/gpgkey"
 ```
 
+#### GPG Key ID
+
+Identifier of GPG key that was used to sign the packages.
+
+```yaml
+gitlab_gpg_key_id: "F6403F6544A38863DAA0B6E03F01618A51312F3F"
+```
+
 #### Package Repository URL
 
 URL to the package repository based on the operating system.

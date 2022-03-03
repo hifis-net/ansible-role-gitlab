@@ -9,6 +9,7 @@ gitlab_edition: "gitlab-ee"
 gitlab_version: ""
 gitlab_release: ""
 gitlab_gpg_key_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/gpgkey"
+gitlab_gpg_key_id: "F6403F6544A38863DAA0B6E03F01618A51312F3F"
 
 # Specify whether this is the GitLab primary node
 gitlab_is_primary: false

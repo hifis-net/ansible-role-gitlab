@@ -16,6 +16,7 @@
     - name: Install APT GPG key
       ansible.builtin.apt_key:
         url: "{{ gitlab_gpg_key_url }}"
+        id: "{{ gitlab_gpg_key_id }}"
         state: present
       when: not is_initial_dryrun
 
