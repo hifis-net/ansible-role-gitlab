@@ -9,21 +9,16 @@ description: Install the necessary dependencies for jobs.
 runs:
   using: composite
   steps:
+    - name: Install pipenv
+      run: pipx install pipenv
+      shell: bash
+
     - name: Set up Python 3.
       uses: actions/setup-python@v3
       id: setup-python
       with:
         python-version: '3.9'
-        
-    - name: Restore Python dependency cache.
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache
-        key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }}
-
-    - name: Install pipenv.
-      run: pip3 install --ignore-installed pipenv
-      shell: bash
+        cache: 'pipenv'
 
     - name: Install dependencies via pipenv.
       run: pipenv install --dev

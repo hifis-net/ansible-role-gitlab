@@ -12,13 +12,12 @@ on:
       - "main"
     tags:
       - "v*.*.*"
+  schedule:
+    - cron: "0 3 * * *"
 
 env:
   PY_COLORS: 1
   ANSIBLE_FORCE_COLOR: 1
-  WORKON_HOME: ~/.cache/venv
-  PIPENV_CACHE_DIR: ~/.cache/pipenv
-  PIP_CACHE_DIR: ~/.cache/pip
 
 jobs:
 
