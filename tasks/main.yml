@@ -9,7 +9,7 @@
   ansible.builtin.include_vars: "{{ ansible_facts['distribution'] }}.yml"
 
 - name: Check whether gitlab-ctl binary is installed
-  stat:
+  ansible.builtin.stat:
     path: "/usr/bin/gitlab-ctl"
   register: gitlab_ctl
 
