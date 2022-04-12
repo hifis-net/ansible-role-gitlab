@@ -11,7 +11,7 @@ galaxy_info:
   description: Install and configure official GitLab Omnibus package
   company: Helmholtz Association
 
-  issue_tracker_url: https://gitlab.com/hifis/ansible/gitlab-role/-/issues
+  issue_tracker_url: https://github.com/hifis-net/ansible-role-gitlab/issues
   github_branch: main
 
   license: Apache-2.0
