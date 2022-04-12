@@ -8,9 +8,9 @@ SPDX-License-Identifier: Apache-2.0
 # GitLab Ansible Role
 
 [![CI Status](https://github.com/hifis-net/ansible-role-gitlab/actions/workflows/ci.yml/badge.svg)](https://github.com/hifis-net/ansible-role-gitlab/actions/workflows/ci.yml)
-[![Ansible Galaxy Role](https://img.shields.io/ansible/role/53400?color=orange)](https://galaxy.ansible.com/hifis/gitlab)
-[![Ansible Galaxy Role downloads](https://img.shields.io/ansible/role/d/53400)](https://galaxy.ansible.com/hifis/gitlab)
-[![Ansible Galaxy quality score](https://img.shields.io/ansible/quality/53400)](https://galaxy.ansible.com/hifis/gitlab)
+[![Ansible Galaxy Role](https://img.shields.io/ansible/role/53362?color=orange)](https://galaxy.ansible.com/hifis/gitlab)
+[![Ansible Galaxy Role downloads](https://img.shields.io/ansible/role/d/53362)](https://galaxy.ansible.com/hifis/gitlab)
+[![Ansible Galaxy quality score](https://img.shields.io/ansible/quality/53362)](https://galaxy.ansible.com/hifis/gitlab)
 [![Apache-2.0 Licensed](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/hifis-net/ansible-role-gitlab/blob/main/LICENSES/Apache-2.0.txt)
 [![Latest release](https://img.shields.io/github/v/release/hifis-net/ansible-role-gitlab)](https://github.com/hifis-net/ansible-role-gitlab/releases)
 
