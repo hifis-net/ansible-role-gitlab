@@ -434,3 +434,10 @@ None.
 ## Author Information
 
 [HIFIS Software Team](https://software.hifis.net)
+
+## Contributors
+
+We would like to thank and give credits to the following contributors of this
+project:
+
+* Be the first to be named here!
