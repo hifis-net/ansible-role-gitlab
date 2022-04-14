@@ -32,11 +32,7 @@ SPDX-FileCopyrightText: 2020 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
 SPDX-License-Identifier: Apache-2.0
 -->
 
-## [Unreleased](https://gitlab.com/hifis/ansible/gitlab-role/tree/HEAD)
-
-[List of commits](https://gitlab.com/hifis/ansible/gitlab-role/-/compare/v1.1.0...main)
-
-### Changed
+**Changed**
 
 - Update Python dependencies and use Python 3.9 in GitLab CI
   ([!49](https://gitlab.com/hifis/ansible/gitlab-role/-/merge_requests/49)
