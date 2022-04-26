@@ -106,6 +106,10 @@ workflow:
 
 ![Workflow Blockdiagram with Kroki](https://kroki.hzdr.de/blockdiag/svg/eNqNU8tO5DAQvPMVrTmRwwrYF7tCcNkT30A4dJyejDXGDm0bNkL8-7YfM3I0WsEpUXd1uV1VHoxT-1HjBG9nAHokhAeDAxm4hc1VB4uLDJZec2vzeJNA9oV80BMGarBfO1A7UnvQW9DeR4KL3s7RGGB6jjLQWzRMOC5Af7UPvpBtHe8blm9dqTDNzuvgeCmwgdGqXQP8LscJm6yAtVmA9bAG-eOAXK9T4DiODfRnlwvpzr1VzgbWQwza2QIOa-LrDoy2AdCOudXbLFY711uRF41Z4NzNqYCmK1xKN0y_OnjCPYGPLFuGHQb4cw8zek_-cK0XTa_EzdDvsuyhc-4rs4_TlPxx1rdWXnZinHI8O85alLkWXcafiKfW1ysJQa6dylcDk6YmdnHOEQI4js7iIjKtFNncZIxjTTZgqgjSiIRe4Uyl2Qbsy10JhHxrBuSv7pDQ7_87_MSLz5ycBBX-8BG5uJNcLxr6zzCL33nxaqP8N8ofzso6H3VNoNVb2zoz0riKuUByhJtWqPWUsKbcxkK61eYj4Pj4lTOO0x2NnnZhMJHa8K-7E9OySs1Jm_LTeT_7B8Nka6c=)
 
+For those of you who want to know how forked-based contributions work on
+_GitHub_, we would like to point to the _GitHub Docs_ about
+[contributing to projects](https://docs.github.com/en/get-started/quickstart/contributing-to-projects).
+
 ## Set Up a Local Development Environment (Optional)
 
 In order to add contributions via pull requests you most probably need to
