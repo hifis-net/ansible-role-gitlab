@@ -1,0 +1,40 @@
+blockdiag {
+  idea [label = "1) your new idea"];
+  investigate [label = "2) check if issue /\npull request\nalready exists"];
+  fork [label = "3) fork repository"];
+  branch [label = "4) create a branch"];
+  request [label = "5) create\npull request"];
+  add [label = "6) add your\ncontribution"];
+  test [label = "7) lint and test\nyour contribution\nlocally (optional)"];
+  ci [label = "8) make sure\nthat CI passes"];
+  reviewer [label = "9) add reviewer(s)"];
+  suggestions [label = "10) incorporate\nreview suggestions"];
+  merge [label = "11) merge\npull request"];
+
+  idea;
+  group {
+    label = "prepare contribution";
+    orientation = landscape;
+    investigate -> fork -> branch -> request;
+  }
+  group {
+    label = "your contribution";
+    orientation = landscape;
+    add -> test;
+  }
+  group {
+    label = "CI and reviews";
+    orientation = landscape;
+    ci -> reviewer -> suggestions;
+  }
+  merge;
+
+  idea -> investigate [folded];
+  request -> add [folded];
+  test -> ci [folded];
+  suggestions -> merge [folded];
+
+  idea [color = "lightblue"];
+  test [color = "lightgrey"];
+  merge [color = "lightgreen"];
+}
