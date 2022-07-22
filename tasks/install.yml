@@ -11,7 +11,8 @@
     name: "{{ gitlab_dependencies }}"
     state: present
 
-- when: ansible_os_family == 'Debian'
+- name: "Prepare Debian GitLab installation"
+  when: ansible_os_family == 'Debian'
   block:
     - name: Install APT GPG key
       ansible.builtin.apt_key:
@@ -34,7 +35,8 @@
         filename: "gitlab_{{ gitlab_edition }}"
         mode: '0644'
 
-- when: ansible_os_family == 'RedHat'
+- name: "Install GitLab on RedHat Like OS"
+  when: ansible_os_family == 'RedHat'
   block:
     - name: Add GitLab yum repository
       ansible.builtin.yum_repository:
@@ -89,7 +91,8 @@
     - gitlab_is_primary is defined
     - gitlab_is_primary
 
-- block:
+- name: "Install GitLab and add helper to detect failed reconfigures"
+  block:
 
     - name: Install or upgrade GitLab.
       become: yes

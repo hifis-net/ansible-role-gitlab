@@ -9,7 +9,7 @@
   become: yes
   ansible.builtin.command: gitlab-ctl reconfigure
   environment:
-    SKIP_POST_DEPLOYMENT_MIGRATIONS: true
+    SKIP_POST_DEPLOYMENT_MIGRATIONS: "true"
   when:
     - gitlab_is_primary
     - gitlab_ctl.stat.exists
