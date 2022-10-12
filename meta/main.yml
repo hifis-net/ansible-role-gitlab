@@ -26,6 +26,9 @@ galaxy_info:
       versions:
         - bionic
         - focal
+    - name: Debian
+      versions:
+        - 11
 
   galaxy_tags:
     - git
