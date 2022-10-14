@@ -7,7 +7,8 @@
 - name: Prepare
   hosts: all
   tasks:
-    - when:
+    - name: Install depenencies for OS family RedHat
+      when:
         - ansible_os_family == 'RedHat'
         - ansible_distribution_major_version | int >= 7
       block:
@@ -19,7 +20,8 @@
             state: present
             update_cache: yes
 
-    - when: ansible_os_family == 'Debian'
+    - name: Install depenencies for OS family Debian
+      when: ansible_os_family == 'Debian'
       block:
         - name: Install missing dependencies
           ansible.builtin.apt:

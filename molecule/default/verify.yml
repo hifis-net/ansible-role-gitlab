@@ -33,7 +33,7 @@
       ansible.builtin.uri:
         url: "http://localhost/-/health"
       register: "health_check"
-      failed_when: "'OK' not in health_check.msg or health_check.status!=200"
+      failed_when: "'OK' not in health_check.msg or health_check.status != 200"
 
     - name: "Check GitLab Readiness endpoint"
       ansible.builtin.uri:
