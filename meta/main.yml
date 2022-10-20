@@ -28,7 +28,7 @@ galaxy_info:
         - focal
     - name: Debian
       versions:
-        - 11
+        - "11"
 
   galaxy_tags:
     - git
