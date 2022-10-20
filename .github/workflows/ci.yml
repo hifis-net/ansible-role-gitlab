@@ -58,6 +58,7 @@ jobs:
           - centos8
           - ubuntu1804
           - ubuntu2004
+          - debian11
 
     steps:
       - name: Check out the codebase.
