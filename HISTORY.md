@@ -1,10 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2020 Helmholtz Centre for Environmental Research (UFZ)
-SPDX-FileCopyrightText: 2020 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
-
-SPDX-License-Identifier: Apache-2.0
--->
-
 **Changed**
 
 - Update Python dependencies and use Python 3.9 in GitLab CI

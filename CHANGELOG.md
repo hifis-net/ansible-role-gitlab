@@ -1,36 +1,54 @@
 # Changelog
 
-## [Unreleased](https://github.com/hifis-net/ansible-role-gitlab/tree/HEAD)
+## [v1.2.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.2.0) (2022-10-21)
 
-[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.1.0...HEAD)
+[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.1.0...v1.2.0)
 
 **Implemented enhancements:**
 
+- Improve Molecule verification step [\#35](https://github.com/hifis-net/ansible-role-gitlab/issues/35)
 - Add badges to README [\#6](https://github.com/hifis-net/ansible-role-gitlab/issues/6)
+- Add Debian 11 \(bullseye\) as platform [\#50](https://github.com/hifis-net/ansible-role-gitlab/pull/50) ([flyinggecko](https://github.com/flyinggecko))
 - Use FQCN throughout the whole project [\#10](https://github.com/hifis-net/ansible-role-gitlab/pull/10) ([tobiashuste](https://github.com/tobiashuste))
 
 **Fixed bugs:**
 
+- Molecule folder not linted by molecule [\#52](https://github.com/hifis-net/ansible-role-gitlab/issues/52)
 - Update issue tracker in Ansible Galaxy meta information [\#7](https://github.com/hifis-net/ansible-role-gitlab/issues/7)
+- Specify Debian 11 correctly in role metadata [\#56](https://github.com/hifis-net/ansible-role-gitlab/pull/56) ([tobiashuste](https://github.com/tobiashuste))
+- Lint molecule files via ansible-lint [\#53](https://github.com/hifis-net/ansible-role-gitlab/pull/53) ([christianhueserhzdr](https://github.com/christianhueserhzdr))
 
 **Closed issues:**
 
+- Add a contribution guide [\#11](https://github.com/hifis-net/ansible-role-gitlab/issues/11)
 - Use FQCN everywhere [\#9](https://github.com/hifis-net/ansible-role-gitlab/issues/9)
+- Add auto-generated CHANGELOG file [\#8](https://github.com/hifis-net/ansible-role-gitlab/issues/8)
 
 **Merged pull requests:**
 
+- Use setup-python action version 4 [\#57](https://github.com/hifis-net/ansible-role-gitlab/pull/57) ([tobiashuste](https://github.com/tobiashuste))
+- Bump molecule from 4.0.1 to 4.0.2 [\#55](https://github.com/hifis-net/ansible-role-gitlab/pull/55) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible-lint from 6.8.1 to 6.8.2 [\#54](https://github.com/hifis-net/ansible-role-gitlab/pull/54) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible from 6.2.0 to 6.5.0 [\#51](https://github.com/hifis-net/ansible-role-gitlab/pull/51) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible-lint from 6.4.0 to 6.8.1 [\#49](https://github.com/hifis-net/ansible-role-gitlab/pull/49) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump yamllint from 1.27.1 to 1.28.0 [\#43](https://github.com/hifis-net/ansible-role-gitlab/pull/43) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible from 6.1.0 to 6.2.0 [\#38](https://github.com/hifis-net/ansible-role-gitlab/pull/38) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible-lint from 6.3.0 to 6.4.0 [\#37](https://github.com/hifis-net/ansible-role-gitlab/pull/37) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Improve molecule verification step [\#36](https://github.com/hifis-net/ansible-role-gitlab/pull/36) ([tobiashuste](https://github.com/tobiashuste))
+- Bump molecule from 3.6.1 to 4.0.1 [\#32](https://github.com/hifis-net/ansible-role-gitlab/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible from 5.7.1 to 6.1.0 [\#31](https://github.com/hifis-net/ansible-role-gitlab/pull/31) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump yamllint from 1.26.3 to 1.27.1 [\#30](https://github.com/hifis-net/ansible-role-gitlab/pull/30) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible-lint from 6.0.2 to 6.3.0 [\#27](https://github.com/hifis-net/ansible-role-gitlab/pull/27) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump robertdebock/galaxy-action from 1.2.0 to 1.2.1 [\#24](https://github.com/hifis-net/ansible-role-gitlab/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump reuse from 0.14.0 to 1.0.0 [\#22](https://github.com/hifis-net/ansible-role-gitlab/pull/22) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible from 5.6.0 to 5.7.1 [\#17](https://github.com/hifis-net/ansible-role-gitlab/pull/17) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Add CONTRIBUTING file and workflow diagram [\#15](https://github.com/hifis-net/ansible-role-gitlab/pull/15) ([christianhueserhzdr](https://github.com/christianhueserhzdr))
+- Prepare HISTORY file and add auto-generated CHANGELOG file [\#14](https://github.com/hifis-net/ansible-role-gitlab/pull/14) ([christianhueserhzdr](https://github.com/christianhueserhzdr))
 - Exchange link to issue tracker in Ansible Galaxy meta information [\#13](https://github.com/hifis-net/ansible-role-gitlab/pull/13) ([christianhueserhzdr](https://github.com/christianhueserhzdr))
 - Add badges to README [\#12](https://github.com/hifis-net/ansible-role-gitlab/pull/12) ([christianhueserhzdr](https://github.com/christianhueserhzdr))
 - Bump ansible from 5.3.0 to 5.6.0 [\#5](https://github.com/hifis-net/ansible-role-gitlab/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible-lint from 5.4.0 to 6.0.2 [\#3](https://github.com/hifis-net/ansible-role-gitlab/pull/3) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Create GitHub Actions for linting, testing and releasing [\#2](https://github.com/hifis-net/ansible-role-gitlab/pull/2) ([christianhueserhzdr](https://github.com/christianhueserhzdr))
-
-<!--
-SPDX-FileCopyrightText: 2020 Helmholtz Centre for Environmental Research (UFZ)
-SPDX-FileCopyrightText: 2020 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
-
-SPDX-License-Identifier: Apache-2.0
--->
 
 **Changed**
 

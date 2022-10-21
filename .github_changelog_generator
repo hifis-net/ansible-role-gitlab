@@ -3,4 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-1.2.0
+user=hifis-net
+project=ansible-role-gitlab
+since-tag=v1.1.0
+base=HISTORY.md
