@@ -35,6 +35,12 @@
         filename: "gitlab_{{ gitlab_edition }}"
         mode: '0644'
 
+    - name: Update APT package cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+      check_mode: false
+
 - name: "Install GitLab on RedHat Like OS"
   when: ansible_os_family == 'RedHat'
   block:
@@ -70,6 +76,11 @@
         sslcacert: /etc/pki/tls/certs/ca-bundle.crt
         metadata_expire: '300'
 
+    - name: Update yum package cache
+      ansible.builtin.yum:
+        update_cache: true
+      check_mode: false
+
 - name: Ensure gitlab-rails file exist
   ansible.builtin.stat:
     path: "/usr/bin/gitlab-rails"
@@ -99,7 +110,6 @@
       ansible.builtin.package:
         name: "{{ gitlab_package_name }}"
         state: "{{ 'present' if gitlab_version | length > 0 else 'latest' }}"
-        update_cache: yes
       register: gitlab_install_output
       notify: GitLab has been installed or upgraded
       when: not is_initial_dryrun
