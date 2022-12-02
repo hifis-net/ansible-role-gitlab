@@ -17,6 +17,7 @@
             name:
               - sudo
               - iproute
+              - libarchive
             state: present
             update_cache: yes
 

@@ -7,20 +7,23 @@
 dependency:
   name: galaxy
 driver:
-  name: docker
+  name: podman
 platforms:
-  - name: instance_gitlab
-    image: geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2004}-ansible:latest
+  - name: instancegitlab
+    image: ${MOLECULE_IMAGE:-ghcr.io/hifis-net/ubuntu-systemd:20.04}
     pre_build_image: true
     privileged: true
+    systemd: always
+    tty: true
     override_command: false
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
 lint: |
   yamllint --strict --format colored . &&
   ansible-lint -v --force-color --offline --exclude .pipenv/ . molecule/
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      stdout_callback: "yaml"
   playbooks:
     prepare: prepare.yml
     check: converge.yml
@@ -28,10 +31,15 @@ provisioner:
     verify: verify.yml
   inventory:
     host_vars:
-      instance_gitlab:
+      instancegitlab:
         gitlab_edition: "gitlab-ce"
 #        gitlab_version: "14.5.2"
 #        gitlab_release: "ce.0"
+        gitlab_additional_configurations:
+          - package:
+            - key: "modify_kernel_parameters"
+              type: "plain"
+              value: "false"
 verifier:
   name: ansible
 scenario:
