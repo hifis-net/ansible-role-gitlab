@@ -18,7 +18,7 @@ A role to install and configure official GitLab Omnibus package.
 
 Currently [supported platforms](meta/main.yml) are:
 - CentOS 7
-- CentOS 8
+- AlmaLinux 8
 - Debian 11 (Bullseye)
 - Ubuntu 18.04 LTS (Bionic Beaver)
 - Ubuntu 20.04 LTS (Focal Fossa)
@@ -48,12 +48,12 @@ the desired release. You can find the available releases
 [here](https://packages.gitlab.com/gitlab).
 
 ```yaml
-gitlab_version: "14.5.2"
+gitlab_version: "15.6.1"
 
-# GitLab Release for RHEL/CentOS 8
+# GitLab Release for RHEL/AlmaLinux 8
 gitlab_release: "ce.0.el8"
 
-# GitLab Release for Ubuntu 20.04
+# GitLab Release for Ubuntu
 gitlab_release: "ce.0"
 ```
 
@@ -86,7 +86,7 @@ gitlab_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/ubuntu
 
 #### Source Package Repository URL
 
-URL to the source package repository (*CentOS* only).
+URL to the source package repository (*CentOS* and *AlmaLinux* only).
 
 ```yaml
 gitlab_source_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/el/{{ ansible_distribution_major_version }}/SRPMS"
@@ -442,4 +442,4 @@ None.
 We would like to thank and give credits to the following contributors of this
 project:
 
-* Be the first to be named here!
+* [flyinggecko](https://github.com/flyinggecko)
