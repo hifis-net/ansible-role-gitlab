@@ -16,6 +16,7 @@
 
 **Merged pull requests:**
 
+- Prepare release version 1.3.0 [\#77](https://github.com/hifis-net/ansible-role-gitlab/pull/77) ([Normo](https://github.com/Normo))
 - Bump ansible-lint from 6.8.7 to 6.9.1 [\#76](https://github.com/hifis-net/ansible-role-gitlab/pull/76) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump reuse from 1.0.0 to 1.1.0 [\#75](https://github.com/hifis-net/ansible-role-gitlab/pull/75) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Update README.md [\#74](https://github.com/hifis-net/ansible-role-gitlab/pull/74) ([Normo](https://github.com/Normo))
