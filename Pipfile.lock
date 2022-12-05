@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "773c81bdb2ad05f4e7e22f397dc9dca8f9ec76b4fa80f972cf949b7dd6a95e50"
+            "sha256": "0e68ad7b29bac5c59cb0605b952b4db87b314c33384debee4749524a3cc0b316"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -283,11 +283,11 @@
         },
         "ansible-lint": {
             "hashes": [
-                "sha256:1824afce2a5619b47c19f6377a0d85b4f39e80b1fc1857191d6a908d68396bf9",
-                "sha256:de3de4e57cd54e17c1ec3a0b4a21d4811838e77d67b56cbe8f91107f2a434432"
+                "sha256:4c85f0d61700042cab964dd7bdc9227137ba5490249f705acfd9de46eb00a07f",
+                "sha256:b614a7b669d72d3aa7a0379f3ef9b27ad781be50044e0dd27b3f9773dc36467a"
             ],
             "index": "pypi",
-            "version": "==6.8.7"
+            "version": "==6.9.1"
         },
         "arrow": {
             "hashes": [
@@ -527,11 +527,11 @@
         },
         "filelock": {
             "hashes": [
-                "sha256:55447caa666f2198c5b6b13a26d2084d26fa5b115c00d065664b2124680c4edc",
-                "sha256:617eb4e5eedc82fc5f47b6d61e4d11cb837c56cb4544e39081099fa17ad109d4"
+                "sha256:3156639b1454b5f828255abf5710f7fc1e10dac69bde3e09e6189b29a91f2505",
+                "sha256:9255d3cd8de8fcb2a441444f7a4f1949ae826da36cd070dc3e0c883614b4bbad"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==3.8.0"
+            "version": "==3.8.1"
         },
         "idna": {
             "hashes": [
