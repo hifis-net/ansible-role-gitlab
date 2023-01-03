@@ -39,7 +39,11 @@
       ansible.builtin.apt:
         update_cache: true
         cache_valid_time: 3600
+      register: apt_cache
       check_mode: false
+      changed_when:
+        - apt_cache.cache_updated
+        - not ansible_check_mode
 
 - name: "Install GitLab on RedHat Like OS"
   when: ansible_os_family == 'RedHat'
