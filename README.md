@@ -198,6 +198,24 @@ Choose whether GitLab's web-server Nginx redirects HTTP requests to HTTPS:
 nginx_redirect_http_to_https: 'false'
 ```
 
+#### Set GitLab feature flags
+
+Set [GitLab feature flags](https://docs.gitlab.com/ee/user/feature_flags.html)
+to enable or disable additional features.
+The variable is a list of key-value pairs which requires the `name` of the
+feature flag and its boolean state `enabled`.
+The default value is set to an empty list `[]`.
+
+```yaml
+gitlab_feature_flags:
+  - name: "vscode_web_ide"
+    enabled: true
+  - name: "chatops"
+    enabled: true
+  - name: "webauthn"
+    enabled: false  
+```
+
 #### Mattermost only use case
 
 This role can be used to run Mattermost without deploying GitLab. In this

@@ -35,4 +35,13 @@
   ansible.builtin.import_tasks: configure.yml
   become: yes
 
+- name: "Force all notified handlers to run at this point. Required for feature flags."
+  ansible.builtin.meta: "flush_handlers"
+
+- name: "Set feature flags"
+  ansible.builtin.include_tasks: "feature-flag.yml"
+  loop: "{{ gitlab_feature_flags }}"
+  loop_control:
+    loop_var: "gitlab_feature_flag"
+
 ...
