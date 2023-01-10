@@ -33,13 +33,19 @@ provisioner:
     host_vars:
       instancegitlab:
         gitlab_edition: "gitlab-ce"
-#        gitlab_version: "14.5.2"
-#        gitlab_release: "ce.0"
         gitlab_additional_configurations:
           - package:
             - key: "modify_kernel_parameters"
               type: "plain"
               value: "false"
+        gitlab_feature_flags:
+          # See https://docs.gitlab.com/ee/user/feature_flags.html
+          - name: "vscode_web_ide"
+            enabled: true
+          - name: "chatops"
+            enabled: true
+          - name: "webauthn"
+            enabled: false
 verifier:
   name: ansible
 scenario:
