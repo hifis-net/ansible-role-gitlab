@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.4.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.4.0) (2023-01-11)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.3.0...v1.4.0)
+
+**Merged pull requests:**
+
+- Flush handlers only if required [\#85](https://github.com/hifis-net/ansible-role-gitlab/pull/85) ([tobiashuste](https://github.com/tobiashuste))
+- Allow to set GitLab feature flags [\#84](https://github.com/hifis-net/ansible-role-gitlab/pull/84) ([tobiashuste](https://github.com/tobiashuste))
+- Report no changes when apt cache is updated in check mode [\#83](https://github.com/hifis-net/ansible-role-gitlab/pull/83) ([Normo](https://github.com/Normo))
+- Bump ansible-lint from 6.10.0 to 6.10.2 [\#82](https://github.com/hifis-net/ansible-role-gitlab/pull/82) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible-lint from 6.9.1 to 6.10.0 [\#81](https://github.com/hifis-net/ansible-role-gitlab/pull/81) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible from 7.0.0 to 7.1.0 [\#80](https://github.com/hifis-net/ansible-role-gitlab/pull/80) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump molecule from 4.0.3 to 4.0.4 [\#79](https://github.com/hifis-net/ansible-role-gitlab/pull/79) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.3.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.3.0) (2022-12-05)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.2.0...v1.3.0)
@@ -16,6 +30,9 @@
 
 **Merged pull requests:**
 
+- Bump ansible-lint from 6.8.5 to 6.8.6 [\#65](https://github.com/hifis-net/ansible-role-gitlab/pull/65) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible-lint from 6.8.2 to 6.8.5 [\#64](https://github.com/hifis-net/ansible-role-gitlab/pull/64) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump molecule from 4.0.2 to 4.0.3 [\#61](https://github.com/hifis-net/ansible-role-gitlab/pull/61) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Prepare release version 1.3.0 [\#77](https://github.com/hifis-net/ansible-role-gitlab/pull/77) ([Normo](https://github.com/Normo))
 - Bump ansible-lint from 6.8.7 to 6.9.1 [\#76](https://github.com/hifis-net/ansible-role-gitlab/pull/76) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump reuse from 1.0.0 to 1.1.0 [\#75](https://github.com/hifis-net/ansible-role-gitlab/pull/75) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -24,9 +41,6 @@
 - Add Ubuntu 22.04 as supported platform [\#72](https://github.com/hifis-net/ansible-role-gitlab/pull/72) ([Normo](https://github.com/Normo))
 - Ensure package cache is updated in check-mode [\#71](https://github.com/hifis-net/ansible-role-gitlab/pull/71) ([Normo](https://github.com/Normo))
 - Bump ansible from 6.5.0 to 7.0.0 [\#68](https://github.com/hifis-net/ansible-role-gitlab/pull/68) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump ansible-lint from 6.8.5 to 6.8.6 [\#65](https://github.com/hifis-net/ansible-role-gitlab/pull/65) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump ansible-lint from 6.8.2 to 6.8.5 [\#64](https://github.com/hifis-net/ansible-role-gitlab/pull/64) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump molecule from 4.0.2 to 4.0.3 [\#61](https://github.com/hifis-net/ansible-role-gitlab/pull/61) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Switch from molecule-docker to molecule-podman [\#34](https://github.com/hifis-net/ansible-role-gitlab/pull/34) ([tobiashuste](https://github.com/tobiashuste))
 
 ## [v1.2.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.2.0) (2022-10-21)
