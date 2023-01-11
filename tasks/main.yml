@@ -35,8 +35,14 @@
   ansible.builtin.import_tasks: configure.yml
   become: yes
 
+- name: "Check if GitLab is already configured"
+  ansible.builtin.stat:
+    path: "/opt/gitlab/etc/gitlab-rails-rc"
+  register: "gitlab_rails_rc"
+
 - name: "Force all notified handlers to run at this point. Required for feature flags."
   ansible.builtin.meta: "flush_handlers"
+  when: "not gitlab_rails_rc.stat.exists and gitlab_feature_flags | length > 0"
 
 - name: "Set feature flags"
   ansible.builtin.include_tasks: "feature-flag.yml"
