@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "accff063834ca8a3d39fcafd8992ea6e4dc57aaade6082f271f2cae4e3e0287b"
+            "sha256": "a838ea77edbbf64e0b30ba86e02a7631550940985b990dfb295185214b87065a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -929,12 +929,12 @@
         },
         "reuse": {
             "hashes": [
-                "sha256:7a054f6e372ad02d0b1b07368030fc38746b50ed45f5422a81994e7a88b52f1f",
-                "sha256:b0f3fb9091ff513af04b555d14a4c529ab05f6a575ab192dd9b68244f1e0721d"
+                "sha256:4211e91caa4c9e433802618a89a2d49a67e2bf76a8029d6708090892f0cdebec",
+                "sha256:b214e756582766c9a8c84e195707a4ee86f58640bc2b0c5eac85279f5fd7d9de"
             ],
             "index": "pypi",
-            "markers": "python_full_version >= '3.6.2' and python_full_version < '4.0.0'",
-            "version": "==1.1.0"
+            "markers": "python_version >= '3.8' and python_version < '4.0'",
+            "version": "==2.1.0"
         },
         "rich": {
             "hashes": [
@@ -1105,14 +1105,6 @@
             ],
             "markers": "sys_platform == 'linux'",
             "version": "==0.3.0"
-        },
-        "setuptools": {
-            "hashes": [
-                "sha256:4ac1475276d2f1c48684874089fefcd83bd7162ddaafb81fac866ba0db282a87",
-                "sha256:b454a35605876da60632df1a60f736524eb73cc47bbc9f3f1ef1b644de74fd2a"
-            ],
-            "markers": "python_version >= '3.8'",
-            "version": "==68.2.2"
         },
         "six": {
             "hashes": [
