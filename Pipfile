@@ -11,7 +11,7 @@ verify_ssl = true
 [dev-packages]
 yamllint = "~=1.32.0"
 ansible-lint = "~=6.10.2"
-molecule = {extras = ["podman"], version = "~=4.0.4"}
+molecule = {extras = ["podman"], version = "~=6.0.2"}
 molecule-podman = "~=2.0.3"
 reuse = "~=1.1.0"
 
