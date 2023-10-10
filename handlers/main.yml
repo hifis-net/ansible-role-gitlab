@@ -14,7 +14,7 @@
   become: yes
   ansible.builtin.shell:
     cmd: gitlab-ctl reconfigure || (touch /etc/gitlab/reconfigure_failed && /bin/false)
-  register: gitlab_reconfigure
+  changed_when: true
   environment:
     SKIP_POST_DEPLOYMENT_MIGRATIONS: true
   listen: GitLab has been installed or upgraded
@@ -24,24 +24,27 @@
   become: yes
   ansible.builtin.shell:
     cmd: gitlab-ctl reconfigure || (touch /etc/gitlab/reconfigure_failed && /bin/false)
-  register: gitlab_reconfigure
+  changed_when: true
   listen: GitLab has been installed or upgraded
   when: not gitlab_is_primary
 
 - name: Restart GitLab
   become: yes
   ansible.builtin.command: gitlab-ctl restart
+  changed_when: true
   register: gitlab_restart
 
 - name: Send SIGHUP to puma worker
   become: yes
   ansible.builtin.command: gitlab-ctl hup puma
+  changed_when: true
   listen: GitLab has been installed or upgraded
   when: not gitlab_mattermost_only_context
 
 - name: Restart sidekiq
   become: yes
   ansible.builtin.command: gitlab-ctl restart sidekiq
+  changed_when: true
   listen: GitLab has been installed or upgraded
   when: not gitlab_mattermost_only_context
 
