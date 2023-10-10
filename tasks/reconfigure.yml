@@ -8,6 +8,7 @@
 - name: Reconfigure Primary GitLab
   become: yes
   ansible.builtin.command: gitlab-ctl reconfigure
+  changed_when: true
   environment:
     SKIP_POST_DEPLOYMENT_MIGRATIONS: "true"
   when:
@@ -17,6 +18,7 @@
 - name: Reconfigure Non Primary GitLab
   become: yes
   ansible.builtin.command: gitlab-ctl reconfigure
+  changed_when: true
   when:
     - not gitlab_is_primary
     - gitlab_ctl.stat.exists
