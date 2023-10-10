@@ -24,8 +24,11 @@ gitlab_rails['redis_sentinels'] = [
     { "host" => "{{ redis_sentinel_ip }}", "port" => "{{ redis_sentinel_port }}" },
 {% endfor %}
 ]
-gitlab_rails['monitoring_whitelist'] = ["{{ gitlab_ip_range }}"]
+{% if gitlab_redis_sentinel_password | default('') | length %}
+gitlab_rails['redis_sentinels_password'] = "{{ gitlab_redis_sentinel_password }}"
 {% endif %}
+{% endif %}
+gitlab_rails['monitoring_whitelist'] = ["{{ gitlab_ip_range }}"]
 
 {% if use_internal_gitaly %}
 git_data_dirs({"default" => {"path" => "{{ gitlab_git_data_dir }}"} })
