@@ -30,27 +30,27 @@ gitlab_backup_keep_time: "604800"
 # Backup directory
 gitlab_backup_path: "/var/opt/gitlab/backups"
 # Port for web-requests
-nginx_listen_port: "80"
+gitlab_nginx_listen_port: "80"
 # Whether to use https
-nginx_listen_https: "false"
+gitlab_nginx_listen_https: "false"
 # Whether to redirect to https
-nginx_redirect_http_to_https: "false"
+gitlab_nginx_redirect_http_to_https: "false"
 
 # Whether to use GitLab Omnibus internal Redis
-use_internal_redis: "true"
+gitlab_use_internal_redis: "true"
 # Password for authentication
-redis_password: 'changeme'
+gitlab_redis_password: 'changeme'
 # Name of the Redis cluster
-redis_cluster_name: 'redis-cluster'
+gitlab_redis_cluster_name: 'redis-cluster'
 # List of IP addresses of Redis Sentinel instances
-redis_sentinel_ips: []
+gitlab_redis_sentinel_ips: []
 # Port on which Redis Sentinel instances are listening
-redis_sentinel_port: "26379"
+gitlab_redis_sentinel_port: "26379"
 # GitLap IP address range
 gitlab_ip_range: "{{ ansible_facts.default_ipv4.address }}/24"
 
 # Whether to use GitLab Omnibus internal Gitaly
-use_internal_gitaly: "true"
+gitlab_use_internal_gitaly: "true"
 # Data directory to use
 gitlab_git_data_dir: "/var/opt/gitlab/git-data"
 # Gitaly token
@@ -58,16 +58,16 @@ gitlab_gitaly_token: 'changeme'
 # GitLab Shell token
 gitlab_secret_token: 'changeme'
 # IP address of the Gitaly instance
-gitaly_instance_ip: "127.0.0.1"
+gitlab_gitaly_instance_ip: "127.0.0.1"
 # Port of the Gitaly instance
-gitaly_instance_port: "8075"
+gitlab_gitaly_instance_port: "8075"
 
 # Whether to use GitLab Omnibus internal PostgreSQL database
-use_internal_postgresql: "true"
+gitlab_use_internal_postgresql: "true"
 # External PostgreSQL database host IP / domain
-postgresql_db_host: "127.0.0.1"
+gitlab_postgresql_db_host: "127.0.0.1"
 # External PostgreSQL database password
-postgresql_db_password: "changeme"
+gitlab_postgresql_db_password: "changeme"
 
 # Whether to enable email
 gitlab_email_enabled: "false"

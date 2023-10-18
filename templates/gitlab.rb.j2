@@ -10,18 +10,18 @@ gitlab_rails['time_zone'] = "{{ gitlab_time_zone }}"
 gitlab_rails['backup_keep_time'] = "{{ gitlab_backup_keep_time }}"
 gitlab_rails['backup_path'] = "{{ gitlab_backup_path }}"
 
-nginx['listen_port'] = "{{ nginx_listen_port }}"
-nginx['listen_https'] = {{ nginx_listen_https }}
-nginx['redirect_http_to_https'] = {{ nginx_redirect_http_to_https }}
+nginx['listen_port'] = "{{ gitlab_nginx_listen_port }}"
+nginx['listen_https'] = {{ gitlab_nginx_listen_https }}
+nginx['redirect_http_to_https'] = {{ gitlab_nginx_redirect_http_to_https }}
 
-{% if not use_internal_redis %}
+{% if not gitlab_use_internal_redis %}
 redis['enable'] = false
-gitlab_rails['redis_password'] = "{{ redis_password }}"
-redis['master_name'] = "{{ redis_cluster_name }}"
-redis['master_password'] = "{{ redis_password }}"
+gitlab_rails['redis_password'] = "{{ gitlab_redis_password }}"
+redis['master_name'] = "{{ gitlab_redis_cluster_name }}"
+redis['master_password'] = "{{ gitlab_redis_password }}"
 gitlab_rails['redis_sentinels'] = [
-{% for redis_sentinel_ip in redis_sentinel_ips %}
-    { "host" => "{{ redis_sentinel_ip }}", "port" => "{{ redis_sentinel_port }}" },
+{% for redis_sentinel_ip in gitlab_redis_sentinel_ips %}
+    { "host" => "{{ redis_sentinel_ip }}", "port" => "{{ gitlab_redis_sentinel_port }}" },
 {% endfor %}
 ]
 {% if gitlab_redis_sentinel_password | default('') | length %}
@@ -30,14 +30,14 @@ gitlab_rails['redis_sentinels_password'] = "{{ gitlab_redis_sentinel_password }}
 {% endif %}
 gitlab_rails['monitoring_whitelist'] = ["{{ gitlab_ip_range }}"]
 
-{% if use_internal_gitaly %}
+{% if gitlab_use_internal_gitaly %}
 git_data_dirs({"default" => {"path" => "{{ gitlab_git_data_dir }}"} })
 {% else %}
 gitaly['enable'] = false
 gitlab_rails['gitaly_token'] = "{{ gitlab_gitaly_token }}"
 gitlab_shell['secret_token'] = "{{ gitlab_secret_token }}"
 git_data_dirs({
-  'default' => { 'gitaly_address' => 'tcp://{{ gitaly_instance_ip }}:{{ gitaly_instance_port }}' },
+  'default' => { 'gitaly_address' => 'tcp://{{ gitlab_gitaly_instance_ip }}:{{ gitlab_gitaly_instance_port }}' },
 })
 {% endif %}
 
@@ -47,14 +47,14 @@ gitlab_rails['smtp_enable'] = {{ gitlab_smtp_enable }}
 
 registry['enable'] = {{ gitlab_registry_enable }}
 
-{% if not use_internal_postgresql %}
+{% if not gitlab_use_internal_postgresql %}
 # Disable the bundled Omnibus provided PostgreSQL
 postgresql['enable'] = false
 # PostgreSQL connection details
 gitlab_rails['db_adapter'] = 'postgresql'
 gitlab_rails['db_encoding'] = 'unicode'
-gitlab_rails['db_host'] = "{{ postgresql_db_host }}"
-gitlab_rails['db_password'] = "{{ postgresql_db_password }}"
+gitlab_rails['db_host'] = "{{ gitlab_postgresql_db_host }}"
+gitlab_rails['db_password'] = "{{ gitlab_postgresql_db_password }}"
 {% endif %}
 
 {#
