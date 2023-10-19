@@ -1,11 +1,35 @@
 # Changelog
 
+## [v1.5.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.5.0) (2023-10-19)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.4.0...v1.5.0)
+
+**Implemented enhancements:**
+
+- Configure redis sentinel password [\#119](https://github.com/hifis-net/ansible-role-gitlab/issues/119)
+
+**Closed issues:**
+
+- Gitaly: Implement Gitaly configuration structure change [\#105](https://github.com/hifis-net/ansible-role-gitlab/issues/105)
+
+**Merged pull requests:**
+
+- chore\(deps\): bump ansible-lint from 6.20.3 to 6.21.0 [\#126](https://github.com/hifis-net/ansible-role-gitlab/pull/126) ([Normo](https://github.com/Normo))
+- chore\(deps\): bump ansible from 8.4.0 to 8.5.0 [\#124](https://github.com/hifis-net/ansible-role-gitlab/pull/124) ([Normo](https://github.com/Normo))
+- feat: configure redis sentinel authentication [\#120](https://github.com/hifis-net/ansible-role-gitlab/pull/120) ([Normo](https://github.com/Normo))
+- fix: use changed\_when on shell and command tasks [\#118](https://github.com/hifis-net/ansible-role-gitlab/pull/118) ([Normo](https://github.com/Normo))
+- chore: upgrade python dependencies [\#114](https://github.com/hifis-net/ansible-role-gitlab/pull/114) ([Normo](https://github.com/Normo))
+- Bump yamllint from 1.29.0 to 1.32.0 [\#108](https://github.com/hifis-net/ansible-role-gitlab/pull/108) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible from 7.1.0 to 7.4.0 [\#104](https://github.com/hifis-net/ansible-role-gitlab/pull/104) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump yamllint from 1.28.0 to 1.29.0 [\#88](https://github.com/hifis-net/ansible-role-gitlab/pull/88) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.4.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.4.0) (2023-01-11)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.3.0...v1.4.0)
 
 **Merged pull requests:**
 
+- Release version 1.4.0 [\#86](https://github.com/hifis-net/ansible-role-gitlab/pull/86) ([tobiashuste](https://github.com/tobiashuste))
 - Flush handlers only if required [\#85](https://github.com/hifis-net/ansible-role-gitlab/pull/85) ([tobiashuste](https://github.com/tobiashuste))
 - Allow to set GitLab feature flags [\#84](https://github.com/hifis-net/ansible-role-gitlab/pull/84) ([tobiashuste](https://github.com/tobiashuste))
 - Report no changes when apt cache is updated in check mode [\#83](https://github.com/hifis-net/ansible-role-gitlab/pull/83) ([Normo](https://github.com/Normo))
