@@ -238,11 +238,21 @@ use_internal_redis: 'false'
 
 #### Password to Authenticate Redis Services within Cluster
 
-It is recommended to enable authentication for Redis Master, Redis Replica and 
-Redis Sentinel by providing the respective password:
+It is recommended to enable authentication for Redis Master and Redis Replicas
+by providing the respective password:
 
 ```yaml
 redis_password: 'changeme'
+```
+
+_Caution: You have to use your own private and encrypted password here._
+
+#### Password to Authenticate Redis Sentinels
+
+Support for Redis Sentinel password authentication was introduced in GitLab 16.1.
+
+```yaml
+gitlab_redis_sentinel_password: 'changeme'
 ```
 
 _Caution: You have to use your own private and encrypted password here._

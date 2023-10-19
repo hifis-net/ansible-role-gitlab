@@ -30,6 +30,7 @@ provisioner:
     host_vars:
       instancegitlab:
         gitlab_edition: "gitlab-ce"
+        gitlab_ip_range: "0.0.0.0/0"
         gitlab_additional_configurations:
           - package:
             - key: "modify_kernel_parameters"
