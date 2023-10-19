@@ -14,6 +14,7 @@
 
 **Merged pull requests:**
 
+- chore: prepare release version 1.5.0 [\#127](https://github.com/hifis-net/ansible-role-gitlab/pull/127) ([Normo](https://github.com/Normo))
 - chore\(deps\): bump ansible-lint from 6.20.3 to 6.21.0 [\#126](https://github.com/hifis-net/ansible-role-gitlab/pull/126) ([Normo](https://github.com/Normo))
 - chore\(deps\): bump ansible from 8.4.0 to 8.5.0 [\#124](https://github.com/hifis-net/ansible-role-gitlab/pull/124) ([Normo](https://github.com/Normo))
 - feat: configure redis sentinel authentication [\#120](https://github.com/hifis-net/ansible-role-gitlab/pull/120) ([Normo](https://github.com/Normo))
