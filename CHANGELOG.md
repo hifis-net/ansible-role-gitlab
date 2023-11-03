@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- chore: prepare release version 1.6.0 [\#132](https://github.com/hifis-net/ansible-role-gitlab/pull/132) ([Normo](https://github.com/Normo))
 - Check for background migration on GitLab update only [\#131](https://github.com/hifis-net/ansible-role-gitlab/pull/131) ([Normo](https://github.com/Normo))
 
 ## [v1.5.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.5.0) (2023-10-19)
