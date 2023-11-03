@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.6.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.6.0) (2023-11-03)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.5.0...v1.6.0)
+
+**Closed issues:**
+
+- Check for background migrations only when updating GitLab [\#130](https://github.com/hifis-net/ansible-role-gitlab/issues/130)
+
+**Merged pull requests:**
+
+- Check for background migration on GitLab update only [\#131](https://github.com/hifis-net/ansible-role-gitlab/pull/131) ([Normo](https://github.com/Normo))
+
 ## [v1.5.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.5.0) (2023-10-19)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.4.0...v1.5.0)
