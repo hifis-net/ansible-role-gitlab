@@ -8,14 +8,14 @@
 - name: Set OS distribution dependent variables
   ansible.builtin.include_vars: "{{ ansible_facts['distribution'] }}.yml"
 
-- name: Check whether gitlab-ctl binary is installed
+- name: Check whether gitlab-rails binary is installed
   ansible.builtin.stat:
-    path: "/usr/bin/gitlab-ctl"
-  register: gitlab_ctl
+    path: "/usr/bin/gitlab-rails"
+  register: gitlab_rails_binary
 
 - name: Determine if this is an initial dry-run
   ansible.builtin.set_fact:
-    is_initial_dryrun: "{{ ansible_check_mode and not gitlab_ctl.stat.exists }}"
+    is_initial_dryrun: "{{ ansible_check_mode and not gitlab_rails_binary.stat.exists }}"
 
 - name: Check if a previous reconfigure had failed
   ansible.builtin.stat:
