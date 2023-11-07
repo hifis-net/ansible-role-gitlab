@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- chore: prepare release version 1.6.1 [\#136](https://github.com/hifis-net/ansible-role-gitlab/pull/136) ([Normo](https://github.com/Normo))
 - fix: remove obsolete conditional check [\#135](https://github.com/hifis-net/ansible-role-gitlab/pull/135) ([Normo](https://github.com/Normo))
 
 ## [v1.6.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.6.0) (2023-11-03)
