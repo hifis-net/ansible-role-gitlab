@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.6.1](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.6.1) (2023-11-07)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.6.0...v1.6.1)
+
+**Fixed bugs:**
+
+- conditional check 'gitlab\_ctl.stat.exists' failed [\#134](https://github.com/hifis-net/ansible-role-gitlab/issues/134)
+
+**Merged pull requests:**
+
+- fix: remove obsolete conditional check [\#135](https://github.com/hifis-net/ansible-role-gitlab/pull/135) ([Normo](https://github.com/Normo))
+
 ## [v1.6.0](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.6.0) (2023-11-03)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.5.0...v1.6.0)
