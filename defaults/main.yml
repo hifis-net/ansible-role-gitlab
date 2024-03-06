@@ -47,7 +47,7 @@ redis_sentinel_ips: []
 # Port on which Redis Sentinel instances are listening
 redis_sentinel_port: "26379"
 # GitLap IP address range
-gitlab_ip_range: "{{ ansible_default_ipv4.address }}/24"
+gitlab_ip_range: "{{ ansible_facts.default_ipv4.address }}/24"
 
 # Whether to use GitLab Omnibus internal Gitaly
 use_internal_gitaly: "true"

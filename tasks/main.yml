@@ -6,7 +6,7 @@
 ---
 
 - name: Set OS distribution dependent variables
-  ansible.builtin.include_vars: "{{ ansible_facts['distribution'] }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_facts.distribution }}.yml"
 
 - name: Check whether gitlab-rails binary is installed
   ansible.builtin.stat:
