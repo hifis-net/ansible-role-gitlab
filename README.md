@@ -179,7 +179,7 @@ gitlab_backup_path: '/var/opt/gitlab/backups'
 Set the port GitLab's web-server Nginx is listening on:
 
 ```yaml
-nginx_listen_port: '80'
+gitlab_nginx_listen_port: '80'
 ```
 
 #### Does Web-Server Nginx accept HTTPS Requests?
@@ -187,7 +187,7 @@ nginx_listen_port: '80'
 Choose whether GitLab's web-server Nginx accepts HTTPS requests:
 
 ```yaml
-nginx_listen_https: 'false'
+gitlab_nginx_listen_https: 'false'
 ```
 
 #### Does Web-Server Nginx Redirect HTTP Requests to HTTPS?
@@ -195,7 +195,7 @@ nginx_listen_https: 'false'
 Choose whether GitLab's web-server Nginx redirects HTTP requests to HTTPS:
 
 ```yaml
-nginx_redirect_http_to_https: 'false'
+gitlab_nginx_redirect_http_to_https: 'false'
 ```
 
 #### Set GitLab feature flags
@@ -233,7 +233,7 @@ gitlab_mattermost_only_context: 'false'
 Set switch to `false` to enable external Redis instance:
 
 ```yaml
-use_internal_redis: 'false'
+gitlab_use_internal_redis: 'false'
 ```
 
 #### Password to Authenticate Redis Services within Cluster
@@ -242,7 +242,7 @@ It is recommended to enable authentication for Redis Master and Redis Replicas
 by providing the respective password:
 
 ```yaml
-redis_password: 'changeme'
+gitlab_redis_password: 'changeme'
 ```
 
 _Caution: You have to use your own private and encrypted password here._
@@ -262,7 +262,7 @@ _Caution: You have to use your own private and encrypted password here._
 Choose a name of the Redis Cluster for references:
 
 ```yaml
-redis_cluster_name: 'redis-cluster'
+gitlab_redis_cluster_name: 'redis-cluster'
 ```
 
 #### List of IP addresses of Redis Sentinel Servers
@@ -270,7 +270,7 @@ redis_cluster_name: 'redis-cluster'
 Add a list of IP addresses of the involved Redis Sentinel servers:
 
 ```yaml
-redis_sentinel_ips:
+gitlab_redis_sentinel_ips:
   - '192.168.33.11'
   - '192.168.33.12'
   - '192.168.33.13'
@@ -281,7 +281,7 @@ redis_sentinel_ips:
 Choose port on which Redis Sentinel servers are listening:
 
 ```yaml
-redis_sentinel_port: '26379'
+gitlab_redis_sentinel_port: '26379'
 ```
 
 #### Whitelist IP Address Range for Monitoring Redis Sentinel Servers
@@ -299,7 +299,7 @@ gitlab_ip_range: '{{ ansible_facts.default_ipv4.address }}/24'
 Set switch to `false` to enable external Gitaly instance:
 
 ```yaml
-use_internal_gitaly: 'false'
+gitlab_use_internal_gitaly: 'false'
 ```
 
 #### Path to GitLab Data Directory
@@ -335,7 +335,7 @@ _Caution: You have to use your own private and encrypted password here._
 Specify IP address of the Gitaly instance:
 
 ```yaml
-gitaly_instance_ip: '127.0.0.1'
+gitlab_gitaly_instance_ip: '127.0.0.1'
 ```
 
 #### Gitaly Port
@@ -343,7 +343,7 @@ gitaly_instance_ip: '127.0.0.1'
 Specify port of the Gitaly instance:
 
 ```yaml
-gitaly_instance_port: '8075'
+gitlab_gitaly_instance_port: '8075'
 ```
 
 ### Variables to be Set if External PostgreSQL Database is Used
@@ -353,7 +353,7 @@ gitaly_instance_port: '8075'
 Set switch to `false` to enable external PostgreSQL Database instance:
 
 ```yaml
-use_internal_postgresql: 'false'
+gitlab_use_internal_postgresql: 'false'
 ```
 
 #### IP Address of External PostgreSQL Database Instance
@@ -361,7 +361,7 @@ use_internal_postgresql: 'false'
 Set IP Address of PostgreSQL Database instance:
 
 ```yaml
-postgresql_db_host: '127.0.0.1'
+gitlab_postgresql_db_host: '127.0.0.1'
 ```
 
 #### Password for External PostgreSQL Database Instance
@@ -369,7 +369,7 @@ postgresql_db_host: '127.0.0.1'
 Set password of PostgreSQL Database instance:
 
 ```yaml
-postgresql_db_password: 'changeme'
+gitlab_postgresql_db_password: 'changeme'
 ```
 
 _Caution: You have to use your own private and encrypted password here._

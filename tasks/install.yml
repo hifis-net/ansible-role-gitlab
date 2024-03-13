@@ -19,7 +19,7 @@
         url: "{{ gitlab_gpg_key_url }}"
         id: "{{ gitlab_gpg_key_id }}"
         state: present
-      when: not is_initial_dryrun
+      when: not gitlab_is_initial_dryrun
 
     - name: Add GitLab APT repository
       ansible.builtin.apt_repository:
@@ -39,10 +39,10 @@
       ansible.builtin.apt:
         update_cache: true
         cache_valid_time: 3600
-      register: apt_cache
+      register: gitlab_apt_cache
       check_mode: false
       changed_when:
-        - apt_cache.cache_updated
+        - gitlab_apt_cache.cache_updated
         - not ansible_check_mode
 
 - name: "Install GitLab on RedHat Like OS"
@@ -129,7 +129,7 @@
         state: "{{ 'present' if gitlab_version | length > 0 else 'latest' }}"
       register: gitlab_install_output
       notify: GitLab has been installed or upgraded
-      when: not is_initial_dryrun
+      when: not gitlab_is_initial_dryrun
 
   rescue:
 
