@@ -89,7 +89,7 @@ gitlab_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/ubuntu
 URL to the source package repository (*CentOS* and *AlmaLinux* only).
 
 ```yaml
-gitlab_source_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/el/{{ ansible_distribution_major_version }}/SRPMS"
+gitlab_source_repo_url: "https://packages.gitlab.com/gitlab/{{ gitlab_edition }}/el/{{ ansible_facts.distribution_major_version }}/SRPMS"
 ```
 
 #### Package Name
@@ -289,7 +289,7 @@ redis_sentinel_port: '26379'
 Range of GitLab IP addresses that are allowed to monitor Redis Sentinel servers:
 
 ```yaml
-gitlab_ip_range: '{{ ansible_default_ipv4.address }}/24'
+gitlab_ip_range: '{{ ansible_facts.default_ipv4.address }}/24'
 ```
 
 ### Variables to be Set if External Gitaly is Used

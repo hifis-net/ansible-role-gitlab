@@ -12,7 +12,7 @@
     state: present
 
 - name: "Prepare Debian GitLab installation"
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts.os_family == 'Debian'
   block:
     - name: Install APT GPG key
       ansible.builtin.apt_key:
@@ -23,14 +23,14 @@
 
     - name: Add GitLab APT repository
       ansible.builtin.apt_repository:
-        repo: "deb {{ gitlab_repo_url }} {{ ansible_distribution_release }} main"
+        repo: "deb {{ gitlab_repo_url }} {{ ansible_facts.distribution_release }} main"
         state: present
         filename: "gitlab_{{ gitlab_edition }}"
         mode: '0644'
 
     - name: Add GitLab source APT repository
       ansible.builtin.apt_repository:
-        repo: "deb-src {{ gitlab_repo_url }} {{ ansible_distribution_release }} main"
+        repo: "deb-src {{ gitlab_repo_url }} {{ ansible_facts.distribution_release }} main"
         state: present
         filename: "gitlab_{{ gitlab_edition }}"
         mode: '0644'
@@ -46,7 +46,7 @@
         - not ansible_check_mode
 
 - name: "Install GitLab on RedHat Like OS"
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts.os_family == 'RedHat'
   block:
     - name: Add GitLab yum repository
       ansible.builtin.yum_repository:
