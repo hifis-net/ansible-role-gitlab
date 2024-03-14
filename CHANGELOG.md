@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased](https://github.com/hifis-net/ansible-role-gitlab/tree/HEAD)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.6.1...HEAD)
+
+**Merged pull requests:**
+
+- chore\(deps-dev\): Bump molecule-plugins from 23.5.0 to 23.5.3 [\#142](https://github.com/hifis-net/ansible-role-gitlab/pull/142) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore\(deps-dev\): Bump molecule from 6.0.2 to 24.2.0 [\#141](https://github.com/hifis-net/ansible-role-gitlab/pull/141) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore\(deps\): Bump ansible from 8.5.0 to 9.3.0 [\#139](https://github.com/hifis-net/ansible-role-gitlab/pull/139) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore\(deps-dev\): Bump yamllint from 1.32.0 to 1.35.1 [\#138](https://github.com/hifis-net/ansible-role-gitlab/pull/138) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.6.1](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.6.1) (2023-11-07)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.6.0...v1.6.1)
