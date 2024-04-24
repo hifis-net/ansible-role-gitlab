@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d2838d3dcee15af3b5543856cf036b98c7e4a4b9070c553c813d13b8f659407a"
+            "sha256": "a7b60fcc277eea292b93c818d3404bb9c7bab685fc6a54baef1bac6bd562b41c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,20 +18,20 @@
     "default": {
         "ansible": {
             "hashes": [
-                "sha256:471993dd239611b4b6134e46911612f85639035f10d82b6c888528b5ffb3b16a",
-                "sha256:7f4ea0e4d065538879b3e11e81e85eed4d802d1940f6564ad950e9d11a31b03c"
+                "sha256:3c278bc9642b97fc953b2ba05b99cd80801e75bf3567dfaa1cb5131fe0ec1ecd",
+                "sha256:aed2f4208a75836a27c13555ec5d8d942fe3b089a8b1fc44e8234fadd9e649fd"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.10'",
-            "version": "==9.3.0"
+            "version": "==9.5.1"
         },
         "ansible-core": {
             "hashes": [
-                "sha256:2cd208b0915948c88bffad331e5d07097b6edca1872cb53375e51b6719e6a060",
-                "sha256:c55d9a5f55651eb6c7f004ca9a9ed854d8cc310e6b438d96cea051cf3d2b2710"
+                "sha256:111e55d358c2297ec0ce03ba98e6c5ce95947fdf50d878215eb8c183d0c275e4",
+                "sha256:f9dea5044a86fd95cc27099f4f5c3ae9beb23acf7c3b6331455726c47825922b"
             ],
             "markers": "python_version >= '3.10'",
-            "version": "==2.16.4"
+            "version": "==2.16.6"
         },
         "cffi": {
             "hashes": [
@@ -205,18 +205,19 @@
         },
         "packaging": {
             "hashes": [
-                "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5",
-                "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"
+                "sha256:2ddfb553fdf02fb784c234c7ba6ccc288296ceabec964ad2eae3777778130bc5",
+                "sha256:eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==23.2"
+            "version": "==24.0"
         },
         "pycparser": {
             "hashes": [
-                "sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9",
-                "sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+                "sha256:491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6",
+                "sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"
             ],
-            "version": "==2.21"
+            "markers": "python_version >= '3.8'",
+            "version": "==2.22"
         },
         "pyyaml": {
             "hashes": [
