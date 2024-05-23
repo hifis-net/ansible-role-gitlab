@@ -1,8 +1,8 @@
 # Changelog
 
-## [v1.6.2](https://github.com/hifis-net/ansible-role-gitlab/tree/v1.6.2) (2024-05-23)
+## [Unreleased](https://github.com/hifis-net/ansible-role-gitlab/tree/HEAD)
 
-[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.6.1...v1.6.2)
+[Full Changelog](https://github.com/hifis-net/ansible-role-gitlab/compare/v1.6.1...HEAD)
 
 **Implemented enhancements:**
 
@@ -11,6 +11,10 @@
 **Fixed bugs:**
 
 - Prefix variables with role name [\#106](https://github.com/hifis-net/ansible-role-gitlab/issues/106)
+
+**Closed issues:**
+
+- Add CITATION.cff [\#125](https://github.com/hifis-net/ansible-role-gitlab/issues/125)
 
 **Merged pull requests:**
 
