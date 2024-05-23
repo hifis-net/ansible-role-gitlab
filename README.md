@@ -7,6 +7,13 @@ SPDX-License-Identifier: Apache-2.0
 
 # GitLab Ansible Role
 
+:warning: **This project is archived!** :warning:
+
+This role has been migrated to our `hifis.toolkit` collection:
+
+- <https://github.com/hifis-net/ansible-collection-toolkit>
+- <https://galaxy.ansible.com/ui/repo/published/hifis/toolkit/>
+
 [![CI Status](https://github.com/hifis-net/ansible-role-gitlab/actions/workflows/ci.yml/badge.svg)](https://github.com/hifis-net/ansible-role-gitlab/actions/workflows/ci.yml)
 [![Ansible Galaxy Role](https://img.shields.io/ansible/role/53362?color=orange)](https://galaxy.ansible.com/hifis/gitlab)
 [![Ansible Galaxy Role downloads](https://img.shields.io/ansible/role/d/53362)](https://galaxy.ansible.com/hifis/gitlab)
@@ -17,6 +24,7 @@ SPDX-License-Identifier: Apache-2.0
 A role to install and configure official GitLab Omnibus package.
 
 Currently [supported platforms](meta/main.yml) are:
+
 - CentOS 7
 - AlmaLinux 8
 - Debian 11 (Bullseye)
